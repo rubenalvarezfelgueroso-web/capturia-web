@@ -230,3 +230,24 @@ footer p { margin: 4px 0; }
   box-shadow: var(--sombra);
 }
 @media (max-width: 600px) { .carrusel img { width: 70vw; } }
+
+/* Galería: flechas y puntos */
+.carrusel-marco { position: relative; max-width: 1180px; margin: 0 auto; }
+.carrusel { scrollbar-width: none; }
+.carrusel::-webkit-scrollbar { display: none; }
+.flecha {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--borde);
+  background: var(--tarjeta); color: var(--texto); font-size: 1.8rem; line-height: 1;
+  box-shadow: var(--sombra); cursor: pointer; display: grid; place-items: center; padding: 0 0 4px;
+}
+.flecha.anterior { left: 8px; }
+.flecha.siguiente { right: 8px; }
+.flecha:disabled { opacity: 0; pointer-events: none; }
+.puntos { display: flex; justify-content: center; gap: 8px; margin-top: 6px; }
+.puntos button {
+  width: 9px; height: 9px; border-radius: 99px; border: 0; padding: 0; cursor: pointer;
+  background: var(--borde); transition: width .2s ease, background .2s ease;
+}
+.puntos button.activo { width: 24px; background: var(--acento); }
+@media (max-width: 600px) { .flecha { display: none; } }

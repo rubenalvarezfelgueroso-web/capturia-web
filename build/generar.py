@@ -87,9 +87,17 @@ def pagina(l):
         figs = "".join(
             f'<img src="/assets/galeria/{i:02d}.webp" alt="{a}" width="440" height="956" loading="lazy">'
             for i, a in enumerate(GALERIA_ES, 1))
+        puntos = "".join(
+            f'<button type="button" aria-label="Imagen {i} de {len(GALERIA_ES)}"></button>'
+            for i in range(1, len(GALERIA_ES) + 1))
         galeria = f'''  <section class="galeria" aria-label="Así es Capturia">
     <h2>Así es Capturia</h2>
-    <div class="carrusel">{figs}</div>
+    <div class="carrusel-marco">
+      <button class="flecha anterior" type="button" aria-label="Anterior">‹</button>
+      <div class="carrusel" id="carrusel">{figs}</div>
+      <button class="flecha siguiente" type="button" aria-label="Siguiente">›</button>
+    </div>
+    <div class="puntos" id="puntos">{puntos}</div>
   </section>
 '''
     rtl = l == "ar"
@@ -241,6 +249,30 @@ document.getElementById('idioma').addEventListener('change', function(e){{
   try{{localStorage.setItem('capturia-idioma', o.dataset.l);}}catch(err){{}}
   location.href=e.target.value;
 }});
+// Galería: puntos y flechas (solo existe en la página en español)
+(function(){{
+  var c=document.getElementById('carrusel'), p=document.getElementById('puntos');
+  if(!c||!p)return;
+  var imgs=[].slice.call(c.querySelectorAll('img')), dots=[].slice.call(p.children);
+  function ir(i){{ i=Math.max(0,Math.min(imgs.length-1,i)); c.scrollTo({{left: imgs[i].offsetLeft-(c.clientWidth-imgs[i].clientWidth)/2, behavior:'smooth'}}); }}
+  function actual(){{
+    if(c.scrollLeft<=2)return 0;
+    if(c.scrollLeft+c.clientWidth>=c.scrollWidth-2)return imgs.length-1;
+    var centro=c.scrollLeft+c.clientWidth/2, mejor=0, d=1e9;
+    imgs.forEach(function(im,i){{ var x=Math.abs(im.offsetLeft+im.clientWidth/2-centro); if(x<d){{d=x;mejor=i;}} }});
+    return mejor;
+  }}
+  function pintar(){{
+    var a=actual(); dots.forEach(function(b,i){{ b.classList.toggle('activo', i===a); b.setAttribute('aria-current', i===a?'true':'false'); }});
+    document.querySelector('.flecha.anterior').disabled = c.scrollLeft<=2;
+    document.querySelector('.flecha.siguiente').disabled = c.scrollLeft+c.clientWidth>=c.scrollWidth-2;
+  }}
+  dots.forEach(function(b,i){{ b.addEventListener('click', function(){{ ir(i); }}); }});
+  document.querySelector('.flecha.anterior').addEventListener('click', function(){{ c.scrollBy({{left: -c.clientWidth*0.8, behavior:'smooth'}}); }});
+  document.querySelector('.flecha.siguiente').addEventListener('click', function(){{ c.scrollBy({{left: c.clientWidth*0.8, behavior:'smooth'}}); }});
+  var t; c.addEventListener('scroll', function(){{ clearTimeout(t); t=setTimeout(pintar,60); }}, {{passive:true}});
+  window.addEventListener('resize', pintar); pintar();
+}})();
 </script>
 </body>
 </html>
