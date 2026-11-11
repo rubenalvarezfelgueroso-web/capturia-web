@@ -23,6 +23,11 @@ IDIOMAS = ["es", "en", "fr", "it", "pt", "de", "ar"]
 
 RAIZ = Path(__file__).resolve().parent.parent / "docs"
 
+# Versión del CSS en el enlace (?v=...): cambia sola cada vez que cambia estilo.css, así el
+# navegador no se queda con la versión antigua guardada en caché (GitHub Pages la guarda 10 min).
+import hashlib
+VERSION_CSS = hashlib.md5((RAIZ / "assets" / "estilo.css").read_bytes()).hexdigest()[:8]
+
 
 def url_idioma(l):
     return "/" if l == "es" else f"/{l}/"
@@ -151,7 +156,7 @@ def pagina(l):
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<link rel="stylesheet" href="/assets/estilo.css">
+<link rel="stylesheet" href="/assets/estilo.css?v={VERSION_CSS}">
 {redir}
 </head>
 <body>
