@@ -26,7 +26,9 @@ RAIZ = Path(__file__).resolve().parent.parent / "docs"
 # Versión del CSS en el enlace (?v=...): cambia sola cada vez que cambia estilo.css, así el
 # navegador no se queda con la versión antigua guardada en caché (GitHub Pages la guarda 10 min).
 import hashlib
-VERSION_CSS = hashlib.md5((RAIZ / "assets" / "estilo.css").read_bytes()).hexdigest()[:8]
+# Saltos de línea normalizados (11/11/2026): así la versión es la misma en Windows (CRLF) y en
+# cualquier otro equipo (LF), y solo cambia si cambia de verdad el CSS.
+VERSION_CSS = hashlib.md5((RAIZ / "assets" / "estilo.css").read_bytes().replace(b"\r\n", b"\n")).hexdigest()[:8]
 
 
 def url_idioma(l):
