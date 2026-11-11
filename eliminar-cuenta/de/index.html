@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konto löschen · Capturia</title>
+<style>
+  :root {
+    --color-fondo: #f7f1e1;
+    --color-tarjeta: #ecdfc0;
+    --color-cabecera: #bc9963;
+    --color-cabecera-texto: #3d2b12;
+    --color-texto: #3d2b12;
+    --color-texto-suave: #6b5b3f;
+    --color-borde: #d8c79f;
+    --color-enlace: #6b4a1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-fondo: #1e1a14;
+      --color-tarjeta: #2a2419;
+      --color-cabecera: #8a6d45;
+      --color-cabecera-texto: #f7f1e1;
+      --color-texto: #f0e9d8;
+      --color-texto-suave: #c9bd9e;
+      --color-borde: #4a3f2c;
+      --color-enlace: #e0c48a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  header {
+    background: var(--color-cabecera);
+    color: var(--color-cabecera-texto);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+  }
+  header p {
+    margin: 0;
+    opacity: 0.85;
+    font-size: 0.9rem;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+  .tarjeta {
+    background: var(--color-tarjeta);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    border: 1px solid var(--color-borde);
+  }
+  h2 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: var(--color-texto);
+  }
+  h3 {
+    font-size: 0.95rem;
+    margin: 16px 0 6px 0;
+    color: var(--color-texto);
+  }
+  p, li {
+    font-size: 0.92rem;
+    color: var(--color-texto);
+  }
+  ul {
+    margin: 6px 0;
+    padding-inline-start: 20px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  a {
+    color: var(--color-enlace);
+  }
+  .indice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .indice li {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  .nota {
+    font-size: 0.82rem;
+    color: var(--color-texto-suave);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--color-borde);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--color-texto-suave);
+  }
+  .idiomas { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 12px; margin-top: 10px; font-size: 0.82rem; }
+  .idiomas a { color: var(--color-cabecera-texto); opacity: 0.85; }
+</style>
+<style>/* barra-capturia */
+.cw-barra{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:8px 16px;background:#0b2f40;color:#f7f1e1;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.cw-barra a{color:#f7f1e1;text-decoration:none}
+.cw-marca{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1.05rem}
+.cw-marca img{width:30px;height:30px;border-radius:8px;background:#f7f1e1}
+.cw-inicio{margin-inline-start:auto;font-size:.9rem;padding:5px 12px;border:1px solid rgba(247,241,225,.35);border-radius:8px}
+.cw-inicio:hover{background:rgba(247,241,225,.12)}
+</style>
+</head>
+<body>
+<!-- barra-capturia -->
+<nav class="cw-barra" aria-label="Capturia"><a class="cw-marca" href="https://capturia.es/de/"><img src="https://capturia.es/assets/logo.png" alt=""><span>Capturia</span></a><a class="cw-inicio" href="https://capturia.es/de/">← Startseite</a></nav>
+
+<header>
+  <h1>🎣 Dein Capturia-Konto löschen</h1>
+  <p>Capturia · entwickelt von Capturia Spain</p>
+  <nav class="idiomas"><a href="../" hreflang="es">Español</a> <a href="../en/" hreflang="en">English</a> <a href="../fr/" hreflang="fr">Français</a> <a href="../it/" hreflang="it">Italiano</a> <a href="../pt/" hreflang="pt">Português</a> <strong>Deutsch</strong> <a href="../ar/" hreflang="ar">العربية</a></nav>
+</header>
+
+<main>
+
+  <div class="tarjeta">
+    <h2>In der App (sofort)</h2>
+    <ol>
+      <li>Öffne Capturia und melde dich an.</li>
+      <li>Tippe auf dein Profilfoto (oben rechts) und öffne <strong>Mein Profil</strong>.</li>
+      <li>Scrolle ganz nach unten und tippe auf <strong>Mein Konto löschen</strong>.</li>
+      <li>Bestätige, indem du das Wort eingibst, das die App verlangt.</li>
+    </ol>
+    <p>Das Konto und seine Daten werden sofort gelöscht, und du wirst abgemeldet.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Ohne die App (per E-Mail)</h2>
+    <p>Wenn du die App nicht mehr installiert hast, schreib uns an <a href="mailto:capturiaSpain@gmail.com?subject=Mein%20Capturia-Konto%20l%C3%B6schen">capturiaSpain@gmail.com</a> von der E-Mail-Adresse, mit der du dich registriert hast, mit dem Betreff <em>„Mein Capturia-Konto löschen“</em>. Wir löschen es innerhalb von höchstens 30 Tagen und bestätigen dir per E-Mail, wenn es erledigt ist.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Nur einige Daten löschen (ohne das Konto zu löschen)</h2>
+    <p>In der App kannst du jederzeit jeden Fang, Spot, eigene Art, Ausflug, großen Biss, jedes Foto, Video, jede Notiz, jedes Treffen, Ausrüstungsteil, jeden Köder oder Link löschen: Öffne den Eintrag und tippe auf <strong>Löschen</strong>. Er wird vom Handy und aus der Cloud gelöscht. Dein Profilfoto kannst du unter <strong>Mein Profil</strong> ändern oder entfernen.</p>
+    <p>Wenn wir es für dich erledigen sollen, schreib an <a href="mailto:capturiaSpain@gmail.com?subject=Daten%20aus%20Capturia%20l%C3%B6schen">capturiaSpain@gmail.com</a> von der E-Mail-Adresse deines Kontos und gib an, welche Daten gelöscht werden sollen. Wir erledigen das innerhalb von höchstens 30 Tagen.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Was gelöscht wird</h2>
+    <ul>
+      <li>Dein Zugangskonto (E-Mail, Anmeldung mit Google oder Apple) und dein Profil (Benutzername, Foto, Einstellungen, Links).</li>
+      <li>Deine Fänge, Angelplätze, eigenen Arten, Schneidertage und großen Bisse, mit allen in der Cloud gespeicherten Fotos und Videos.</li>
+      <li>Deine Notizen, Treffen, Nachrichten in Gruppen, Ausrüstung (Ruten, Rollen, Schnüre und Sonstiges), Köder, Links und deine «Welcher Fisch ist das?»-Anfragen.</li>
+      <li>Deine Liste der Angelfreunde, ausstehende Sendungen und die Gruppen, die du erstellt hast.</li>
+      <li>Dein Tarif- und Abo-Verlauf in Capturia.</li>
+    </ul>
+    <h3>Was nicht gelöscht wird</h3>
+    <ul>
+      <li>Was andere Benutzer bereits von dir angenommen haben (Fänge, Angelplätze oder Arten, die du ihnen geschickt hast und die sie gespeichert haben): Das gehört dann ihnen und bleibt in ihrem Konto, ohne deinen Namen.</li>
+      <li>Kaufbelege von Google Play oder dem App Store: Diese bewahrt der Store nach seinen eigenen Richtlinien auf.</li>
+      <li>Die anonyme Kopie, die Capturia ohne Fotos von deinen Fängen mit „Öffentlich (Karte)“ oder „Angelfreunde und öffentlich“ für die Community-Karte speichert (Art, Gewicht, Standort, Datum und Uhrzeit): Sie ist nicht mehr mit deinem Konto verknüpft.</li>
+      <li>Technische Server-Backups können deine Daten, falls vorhanden, bis zu 30 Tage aufbewahren, bis sie erneuert werden. Die anonyme Kopie für die Karte wird unbegrenzt aufbewahrt.</li>
+    </ul>
+    <p class="nota">Das Löschen deines Kontos <strong>kündigt kein</strong> aktives Abo bei Google Play oder im App Store. Kündige es vorher im Store (Google Play → Zahlungen und Abos → Abos), damit es nicht verlängert wird.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Weitere Informationen</h2>
+    <p>Lies unsere <a href="../../de/">Datenschutzerklärung</a> oder schreib uns an <a href="mailto:capturiaSpain@gmail.com">capturiaSpain@gmail.com</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  Capturia — Kontolöschung
+</footer>
+
+</body>
+</html>

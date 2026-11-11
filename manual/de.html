@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="capturia-manual-version" content="2026-10-30">
+<title>Capturia-Benutzerhandbuch</title>
+<style>
+  :root {
+    --color-fondo: #f7f1e1;
+    --color-tarjeta: #ecdfc0;
+    --color-cabecera: #bc9963;
+    --color-cabecera-texto: #3d2b12;
+    --color-texto: #3d2b12;
+    --color-texto-suave: #6b5b3f;
+    --color-borde: #d8c79f;
+    --color-enlace: #6b4a1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-fondo: #1e1a14;
+      --color-tarjeta: #2a2419;
+      --color-cabecera: #8a6d45;
+      --color-cabecera-texto: #f7f1e1;
+      --color-texto: #f0e9d8;
+      --color-texto-suave: #c9bd9e;
+      --color-borde: #4a3f2c;
+      --color-enlace: #e0c48a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  header {
+    background: var(--color-cabecera);
+    color: var(--color-cabecera-texto);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+  }
+  header p {
+    margin: 0;
+    opacity: 0.85;
+    font-size: 0.9rem;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+  .tarjeta {
+    background: var(--color-tarjeta);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    border: 1px solid var(--color-borde);
+  }
+  h2 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: var(--color-texto);
+  }
+  h3 {
+    font-size: 0.95rem;
+    margin: 16px 0 6px 0;
+    color: var(--color-texto);
+  }
+  p, li {
+    font-size: 0.92rem;
+    color: var(--color-texto);
+  }
+  ul {
+    margin: 6px 0;
+    padding-inline-start: 20px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  a {
+    color: var(--color-enlace);
+  }
+  .indice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .indice li {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  .nota {
+    font-size: 0.82rem;
+    color: var(--color-texto-suave);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--color-borde);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--color-texto-suave);
+  }
+
+  .idiomas { display:flex; flex-wrap:wrap; justify-content:center; gap:6px 12px; margin-top:10px; font-size:0.82rem; }
+  .idiomas a { color: var(--color-cabecera-texto); text-decoration:none; opacity:0.85; }
+  .idiomas a.activo { font-weight:700; opacity:1; text-decoration:underline; }
+  ol { margin: 6px 0; padding-inline-start: 22px; }
+  .tabla-scroll { overflow-x:auto; }
+  [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+</style>
+<style>/* barra-capturia */
+.cw-barra{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:8px 16px;background:#0b2f40;color:#f7f1e1;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.cw-barra a{color:#f7f1e1;text-decoration:none}
+.cw-marca{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1.05rem}
+.cw-marca img{width:30px;height:30px;border-radius:8px;background:#f7f1e1}
+.cw-inicio{margin-inline-start:auto;font-size:.9rem;padding:5px 12px;border:1px solid rgba(247,241,225,.35);border-radius:8px}
+.cw-inicio:hover{background:rgba(247,241,225,.12)}
+</style>
+</head>
+<body>
+<!-- barra-capturia -->
+<nav class="cw-barra" aria-label="Capturia"><a class="cw-marca" href="https://capturia.es/de/"><img src="https://capturia.es/assets/logo.png" alt=""><span>Capturia</span></a><a class="cw-inicio" href="https://capturia.es/de/">← Startseite</a></nav>
+
+<header>
+  <h1>🎣 Capturia-Benutzerhandbuch</h1>
+  <p>Aktualisiert am 28. Oktober 2026</p>
+  <nav class="idiomas"><a href="es.html" hreflang="es">Español</a> <a href="en.html" hreflang="en">English</a> <a href="fr.html" hreflang="fr">Français</a> <a href="it.html" hreflang="it">Italiano</a> <a href="pt.html" hreflang="pt">Português</a> <a href="de.html" hreflang="de" class="activo">Deutsch</a> <a href="ar.html" hreflang="ar">العربية</a></nav>
+</header>
+
+<!-- Contenido del manual (alemán): la app lo descarga y muestra este <main> dentro de su propia pantalla
+     (con copia guardada para leerlo sin conexión). Generado a partir del manual en Claude Docs. -->
+<main id="contenido-manual">
+<div class="tarjeta">
+    <h2 id="indice">Inhalt</h2>
+    <ul class="indice">
+      <li><a href="#bienvenida">Willkommen</a></li>
+      <li><a href="#primeros-pasos">Erste Schritte</a></li>
+      <li><a href="#moverse-por-la-app">Durch die App navigieren</a></li>
+      <li><a href="#sitios">Angelplätze</a></li>
+      <li><a href="#capturas">Fänge</a></li>
+      <li><a href="#bolos-y-grandes-picadas">Schneidertage und große Bisse</a></li>
+      <li><a href="#calendario">Kalender</a></li>
+      <li><a href="#especies">Arten</a></li>
+      <li><a href="#que-pez-es">Welcher Fisch ist das?</a></li>
+      <li><a href="#estadisticas">Erweiterte Statistiken</a></li>
+      <li><a href="#equipamiento">Ausrüstung</a></li>
+      <li><a href="#companeros">Angelfreunde</a></li>
+      <li><a href="#planes">Tarife</a></li>
+      <li><a href="#ajustes">Einstellungen</a></li>
+      <li><a href="#acerca-de-capturia">Über Capturia</a></li>
+      <li><a href="#preguntas-frecuentes">Häufige Fragen</a></li>
+    </ul>
+  </div>
+
+  <div class="tarjeta">
+    <h2 id="bienvenida">Willkommen</h2>
+    <p>Capturia ist dein digitales Angeltagebuch: Erfasse deine Angelplätze, deine Fänge (mit Fotos, Gewicht und den Bedingungen des Tages) und auch die Tage, an denen nichts gebissen hat. Alles wird auf deinem Handy gespeichert und, wenn du möchtest, in der Cloud gesichert. Mit der Zeit wird daraus deine eigene Angelgeschichte: welche Art an welchem Platz am besten beißt, bei welcher Tide, bei welchem Wind.</p>
+    <p>Dieses Handbuch wird nach und nach erweitert, während die App wächst.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="primeros-pasos">Erste Schritte</h2>
+    <ol>
+      <li>Beim Öffnen der App siehst du den Willkommensbildschirm in der Sprache deines Handys (du kannst sie später in den Einstellungen ändern). Melde dich mit <strong>Weiter mit Google</strong> oder mit deiner E-Mail an: <strong>Oder mit E-Mail anmelden</strong>, wenn du schon ein Konto hast, oder <strong>Registrieren</strong>, um ein neues zu erstellen. Wenn du schon ein Konto hattest, geht es direkt zum Start.</li>
+      <li>Wenn du neu bist, wähle dein Angelgebiet von Hand (Kontinent, Land und in Spanien die autonome Gemeinschaft). Zwischen hellem und dunklem Design wechselst du jederzeit in den Einstellungen.</li>
+      <li>Wähle deinen Benutzernamen: Die App prüft sofort, ob er noch frei ist. Einmal festgelegt, kann er nicht mehr geändert werden.</li>
+      <li>Dein Katalog startet mit fünf bereits geladenen Arten: Goldbrasse, Wolfsbarsch, Kalmar, Krake und Lachs.</li>
+      <li>Du startest im Free-Tarif. Deinen Tarif findest du im Avatar-Menü &gt; Abo und Tarif.</li>
+    </ol>
+  </div>
+  <div class="tarjeta">
+    <h2 id="moverse-por-la-app">Durch die App navigieren</h2>
+    <ul>
+      <li><strong>Startbildschirm</strong>: große Schaltflächen für das, was du am meisten nutzt (Fang hinzufügen, Kalender, Fänge, Köder, Einstellungen, Handbuch, Über…). Was dein Tarif nicht enthält, zeigt ein Schloss. Dein Profil findest du im Avatar-Menü.</li>
+      <li><strong>Untere Leiste</strong>: Arten, Plätze, Fänge, Schneider, Kalender und Halleluja! (neuer Fang). Die Schaltfläche des Bereichs, in dem du gerade bist, hat einen dunkleren Rand und einen helleren Hintergrund.</li>
+      <li><strong>Seitenmenü</strong> (☰): deine Links, Ausrüstung (Köder und Kunstköder), Werkzeuge, Community sowie Hilfe (Handbuch und Über Capturia). Oben rechts gibt es eine Verknüpfung zu 🏠 Start.</li>
+      <li><strong>Avatar-Menü</strong> (dein Foto, oben rechts): 🏠 Start, Mein Profil, Einstellungen, Abo und Tarif sowie Abmelden.</li>
+    </ul>
+  </div>
+  <div class="tarjeta">
+    <h2 id="sitios">Angelplätze</h2>
+    <p>Ein Angelplatz ist ein Ort, an dem du angelst: ein Stausee, ein Flussabschnitt, ein Strand. Tippe unter Plätze auf <strong>+ Neu</strong> und fülle aus:</p>
+    <ul>
+      <li><strong>Name</strong> und <strong>Art des Platzes</strong> (Stausee, Fluss, Meer usw.).</li>
+      <li><strong>Foto</strong>, optional.</li>
+      <li><strong>Standort</strong>: Du kannst deine aktuelle GPS-Position verwenden.</li>
+      <li><strong>Sichtbarkeit</strong>: öffentlich oder privat. Einen öffentlichen Platz kann jeder sehen, der einen dort gemachten Fang von dir erhält; einen privaten nicht.</li>
+    </ul>
+    <p>Jeder Angelplatz zeigt, wie viele Fänge und Schneidertage du dort erfasst hast. Die Karte hat zwei Symbole: das <strong>rote</strong> öffnet den Angelplatz in deiner Karten-App (ausgegraut, wenn er keinen Standort hat) und das <strong>blaue</strong> sendet ihn an einen Angelfreund (Premium-Tarif). Tippe auf die Karte, um <strong>Angelplatz ansehen</strong> zu öffnen: Oben findest du <strong>Bearbeiten</strong>, <strong>Löschen</strong> und das Senden-Symbol. Wenn du einen Angelplatz mit Fängen, Schneidertagen oder großen Bissen löschst, werden diese nicht gelöscht: Sie bleiben ohne Angelplatz, als ausstehend markiert, und du kannst ihnen später einen anderen zuweisen. Mit der <strong>Lupe</strong> neben „Alle Angelplätze“ suchst du einen Angelplatz beim Tippen nach Namen.</p>
+    <p><strong>Eigene Typen ★</strong> (ab dem Plus-Plan): Wenn keiner der Typen von Capturia passt, tippe bei der Typauswahl auf <strong>+ Neu</strong> und gib deinen eigenen ein (zum Beispiel „Buhne“). Er erscheint mit ★ neben den üblichen, wird mit deinen Daten und in deiner Cloud-Kopie gespeichert und zählt in den Statistiken. Mit <strong>Meine Spot-Typen</strong> in derselben Auswahl benennst du sie um oder löschst sie; wenn du einen löschst, wechseln die Angelplätze, die ihn nutzten, zu „Sonstiges“. Wenn du einem Angelfreund einen Angelplatz sendest, kommt sein eigener Typ mit dem Namen bei ihm an.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="capturas">Fänge</h2>
+    <p>Tippe unter Fänge auf <strong>+🎣</strong> neben der Suche (oder auf Halleluja! in der unteren Leiste), um einen Fisch zu erfassen. Du kannst hinzufügen:</p>
+    <ul>
+      <li><strong>Art</strong> und <strong>Angelplatz</strong> (Pflichtfelder), <strong>Gewicht</strong> und <strong>Länge</strong>.</li>
+      <li><strong>Mindestmaß</strong>: Sind Art und Angelplatz gewählt, siehst du unter der Länge das Mindestmaß dieses Gebiets, rot, wenn dein Fisch darunter liegt (siehe Arten).</li>
+      <li><strong>Fotos oder Video</strong> des Fangs.</li>
+      <li><strong>Mehrfachfang</strong>: Wenn du mehrere Fische auf einmal gefangen hast, erfasse sie als einen Eintrag; dann gibst du statt der Länge die <strong>Anzahl</strong> an.</li>
+      <li><strong>Kunstköder und Naturköder</strong> (unter der Anzahl bzw. Länge): wähle die verwendeten aus deiner Ausrüstungsliste. Beides ist optional; hast du noch keine angelegt, weist dich das Feld darauf hin, das unter Ausrüstung zu tun.</li>
+      <li><strong>Bedingungen des Tages</strong>: Die Wetterdaten (Wind, Regen, Bewölkung und Mondphase) werden mit der Wetter-Schaltfläche automatisch abgerufen, ausgehend vom Angelplatz oder von deinem Standort; den Rest trägst du selbst ein: Gezeiten, Tidenart, Klarheit und Farbe des Wassers, Seegang, Rute, Rolle, Köder oder Kunstköder. Alles ist optional, aber je mehr du ausfüllst, desto nützlicher wird dein Verlauf mit der Zeit.</li>
+      <li><strong>Sichtbarkeit</strong>: privat oder öffentlich für deine Angelfreunde.</li>
+    </ul>
+    <p>Die Leiste oben unter Fänge hat zwei Zeilen. In der ersten filterst du nach <strong>Art</strong> oder <strong>Angelplatz</strong>, und über <strong>+ Filter</strong> kommst du zu den erweiterten Filtern (Datum, Gewicht, Fangart, Kunstköder, Köder und bestimmte Bedingungen), verfügbar ab dem Premium-Tarif. In der zweiten findest du die <strong>Suche</strong>, die beim Tippen nach dem Namen der Art filtert, die Schaltfläche <strong>+🎣</strong> zum Erfassen eines Fangs und die Schaltfläche <strong>👥🎣</strong> für die Fänge deiner Angelfreunde. Um das Foto eines Fangs zu teilen, halte seine Karte gedrückt (oder tippe auf ⋮) und wähle Teilen.</p>
+    <p>Die Fänge deiner Angelfreunde werden <strong>nie mit deinen gemischt</strong>, so kannst du deine Liste jedem zeigen. Um sie zu sehen, tippe auf <strong>👥🎣</strong>: Ihr Rand wird rot und die Liste zeigt nur Fänge deiner Angelfreunde. Die, die dir geschickt wurden und die du gespeichert hast, haben einen <strong>roten Rand links</strong>; die öffentlichen deiner Angelfreunde (ab Premium) einen <strong>hellblauen Rand</strong> und den Namen dessen, der sie erfasst hat. Tippe erneut auf die Schaltfläche, um wieder deine zu sehen. Fänge von Angelfreunden kannst du ansehen (und die empfangenen löschen), aber nicht bearbeiten oder weiterleiten.</p>
+    <p>Bei deinen Fängen bedeutet <strong>👥 Mit Angelfreunden geteilt</strong>, dass deine Angelfreunde ihn sehen (Sichtbarkeit Angelfreunde oder Angelfreunde und öffentlich), und <strong>✅ Auf der Karte veröffentlicht</strong>, dass er auf der Karte der öffentlichen Fänge erscheint. Bei den Fängen deiner Angelfreunde zeigen öffentliche <strong>Veröffentlicht von</strong> mit dem Namen dessen, der ihn erfasst hat, und empfangene <strong>Gesendet von</strong>. Hat dir ein Angelfreund einen Fang gesendet, den er auch veröffentlicht hat, erscheint er nur einmal, mit „Gesendet von … · auch veröffentlicht“. In <strong>+ Filter</strong> kannst du in der Karte <strong>👥 Angelfreunde</strong> ankreuzen, von welchen Angelfreunden du Fänge sehen willst; ohne Haken siehst du die von allen. Wenn du einen Fang sendest, geht er mit seinem Köder (und dessen Typ, auch einem eigenen) mit.</p>
+    <h3>Verifizierte Fotos ✅</h3>
+    <p>Wenn du einem Fang ein Foto hinzufügst, fragt Capturia, ob du jetzt <strong>ein Foto aufnehmen</strong> oder <strong>eines aus der Galerie wählen</strong> möchtest. Fotos, die du in diesem Moment mit der Kamera aus Capturia aufnimmst, sind <strong>verifiziert</strong>: Sie tragen im Fang das Abzeichen ✅ und die Karte zeigt „Verifiziertes Foto“. Fotos aus der Galerie (und aus „Aus meiner Galerie importieren“) erhalten kein Abzeichen, da sie von überall stammen oder bearbeitet sein können. Wenn deine Kameraden wissen sollen, dass dein Fisch echt ist, mach das Foto aus Capturia.</p>
+    <h3>Einen Fang ansehen, bearbeiten oder löschen</h3>
+    <p>Tippe auf eine Karte, um <strong>Fang ansehen</strong> zu öffnen. Oben findest du <strong>Bearbeiten</strong>, <strong>Löschen</strong> und das Senden-Symbol. Wenn du auf Bearbeiten tippst, wird „Bearbeiten“ zu <strong>Speichern</strong> (aktiv, sobald du etwas änderst, auch Fotos, Titelbild oder Video) und „Löschen“ zu <strong>Abbrechen</strong> (verwirft die Änderungen). Arten und Angelplätze funktionieren genauso.</p>
+    <p>Beim Löschen entscheidet das Kästchen <strong>„Auch in der Cloud löschen“</strong> (standardmäßig aktiviert), ob auch deine Cloud-Kopie gelöscht wird, nicht nur die auf dem Handy. Bist du in dem Moment offline, warnt dich die App und erledigt es selbst, sobald du wieder online bist oder die App erneut öffnest. Das gilt auch für Angelplätze, Arten, Schneidertage und große Bisse.</p>
+    <p><strong>Mehrere auf einmal löschen</strong>: Halte eine Karte gedrückt (oder tippe auf ⋮) und wähle <strong>Mehrere löschen</strong>, die letzte Option im Menü. Der Bildschirm wechselt in den Auswahlmodus, diese Karte ist schon angehakt: Tippe die anderen an, die du willst, nutze <strong>Alle</strong>, um alle an- oder abzuhaken, und drücke den roten 🗑-Knopf mit der Zahl. Du bestätigst nur einmal, mit demselben Cloud-Kästchen, und sie werden nach denselben Regeln wie einzeln gelöscht. <strong>Abbrechen</strong> beendet den Auswahlmodus. Das gibt es bei Fängen, Arten (mit dem Kästchen „Auch ihre Fänge löschen“: ohne Haken werden Arten mit Fängen nicht gelöscht), Angelplätzen, Schneidertagen, Ködern und Kunstködern und dem Rest der Ausrüstung.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="bolos-y-grandes-picadas">Schneidertage und große Bisse</h2>
+    <p>Nicht alles sind Fänge: Unter Schneider speicherst du auch die Tage, an denen nichts gebissen hat. Ein <strong>Schneidertag</strong> erfasst Datum, Angelplatz, Angelstunden und die Bedingungen des Tages, genau wie ein Fang, nur ohne Fisch. So erkennst du mit der Zeit, welche Bedingungen an welchem Platz nicht funktionieren.</p>
+    <p>Ein <strong>großer Biss</strong> ist der, der dir entwischt ist: Du hast den Ruck gespürt oder die Schnur ist gerissen, aber der Fisch kam nicht raus. Du kannst eintragen, welche Arten du vermutest und ob die Schnur gerissen ist. Beides wird im selben Bildschirm erfasst, mit dem Schalter für große Bisse, und die Liste lässt sich mit <strong>Alle / Schneider / Bisse</strong> filtern.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="calendario">Kalender</h2>
+    <p>Die Schaltfläche <strong>Kalender</strong> in der unteren Leiste (zwischen Schneider und Halleluja!) öffnet eine Monatsansicht mit einem farbigen Punkt für jeden Tag, an dem du etwas erfasst hast: Fänge, Schneidertage und große Bisse. Wische nach links oder rechts, um den Monat zu wechseln. Tippe auf einen Tag, um zu sehen, was du eingetragen hast, und den Eintrag schreibgeschützt zu öffnen.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="especies">Arten</h2>
+    <p>Der Bildschirm Arten zeigt <strong>deinen Katalog</strong>: die Arten auf deinem Handy (die fünf vom Start, die du aus der öffentlichen Liste hinzufügst, und die du selbst anlegst). Jede Karte zeigt das Foto, den Typ, wie viele Fänge du hast und das <strong>Mindestmaß für dein Gebiet</strong>. Er wird je nach Einstellungen manuell oder automatisch mit deiner Kopie in der Cloud abgeglichen.</p>
+    <p>Nutze die <strong>Lupe</strong> neben „Alle Arten“, um nach deutschem oder wissenschaftlichem Namen zu suchen. Tippe auf eine Karte, um <strong>Art ansehen</strong> zu öffnen: Oben findest du <strong>Bearbeiten</strong>, <strong>Löschen</strong> und das Symbol zum Senden an einen Angelfreund. Beim Löschen einer Art erscheint derselbe Hinweis wie bei Angelplätzen und Fängen, mit der Option, sie auch in der Cloud zu löschen. Hat sie Fänge, werden diese mitgelöscht: Die App sagt dir, wie viele, und bittet dich, das Bestätigungswort einzugeben.</p>
+    <h3>Öffentliche Artenliste (offizieller Katalog)</h3>
+    <p>Das ist der offizielle Katalog von Capturia, vom Team geprüft und mit einem Foto jeder Art. Du findest ihn im Menü (☰) &gt; Daten &gt; <strong>🐟 Öffentliche Artenliste</strong>, ab dem Plus-Tarif.</p>
+    <ul>
+      <li><strong>Gebiet</strong>: Die Liste wird nach Gebieten gefiltert (Europäischer Atlantik, Kantabrisches Meer, Mittelmeer …). Beim Öffnen ist deins ausgewählt; du kannst ein anderes oder „Alle Zonen“ wählen. Außerdem kannst du nach Namen suchen und nach Typ filtern.</li>
+      <li><strong>Mehr Infos</strong>: Tippe auf den Namen einer Art (oder den Pfeil ▾), um ihre Karte aufzuklappen, mit großem Foto, Namen, wissenschaftlichem Namen, Typ, Lebensraum und Mindestmaß. <strong>📖 Mehr erfahren</strong> öffnet das vollständige Porträt: Eckdaten, Erkennungsmerkmale, Lebensraum, Nahrung, Fortpflanzung, Angeltipps und eine Kuriosität. Gibt es noch kein Porträt, ist die Schaltfläche abgeblendet.</li>
+      <li><strong>Zu deinem Katalog hinzufügen</strong>: Tippe auf ⊕. Du bekommst deine eigene Kopie, die du jederzeit bearbeiten oder entfernen kannst. Arten, die du schon hast, erscheinen nicht; schalte „Auch die anzeigen, die ich schon habe“ ein, um sie mit ✓ zu sehen.</li>
+    </ul>
+    <p><strong>Offizielle Art oder eigene?</strong> Wenn die Art in der öffentlichen Liste steht, füge sie von dort hinzu: Sie kommt mit Foto, Namen in deiner Sprache, wissenschaftlichem Namen und Mindestmaßen pro Gebiet, die das Capturia-Team aktuell hält. Lege nur dann selbst eine an, wenn sie fehlt; machst du sie öffentlich, schlägst du sie für den Katalog vor und das Team prüft sie. Wählst du in einem Fang eine offizielle Art (auch mit Welcher Fisch ist das?), kommt sie automatisch in deinen Katalog, ohne Doppelung, falls du sie schon hattest. Ändert der Katalog das Foto einer Art, die du hast, bietet dir das Bearbeiten <strong>Offizielles Foto verwenden</strong> an: Dein Foto wird nie geändert, wenn du es nicht selbst wählst.</p>
+    <p>Wenn du eine Art von Hand anlegst und ihr Name zu einer im offiziellen Katalog passt, warnt dich die App: <strong>Offizielle nutzen</strong> fügt sie mit Foto, Mindestmaßen und Steckbrief zu deinen Arten hinzu, und <strong>Eigene anlegen</strong> macht mit deiner weiter. Schlägst du eine Art als öffentlich vor, die schon im Katalog war, sagt dir das Team Bescheid, statt sie zu prüfen.</p>
+    <h3>Mindestmaß je nach Gebiet</h3>
+    <p>Dieselbe Art kann je nach Fangort unterschiedliche Mindestmaße haben (zum Beispiel die Achselfleckbrasse: 17 cm allgemein und 25 cm im Kantabrischen Meer). Deshalb haben offizielle Arten ein Maß pro Gebiet, und das Porträt <strong>Mehr erfahren</strong> zeigt alle, deins hervorgehoben.</p>
+    <ul>
+      <li><strong>Dein Gebiet</strong> ergibt sich aus Land und Region, die du am Anfang gewählt hast. Du änderst es unter Einstellungen &gt; <strong>Mein Angelgebiet</strong>.</li>
+      <li><strong>In einem Fang</strong> siehst du unter der Länge das Mindestmaß des gewählten Angelplatzes (sein Gebiet wird aus seinem Standort berechnet). Liegen Länge oder Gewicht darunter, wird der Hinweis rot.</li>
+      <li>Das Gebiet wird auf deinem Handy berechnet und nirgendwohin gesendet.</li>
+    </ul>
+    <p>Die Maße sind nur Richtwerte: Prüfe immer die geltenden Vorschriften in deinem Gebiet. Selbst angelegte Arten haben nur ein Maß, das du eingibst.</p>
+    <p>Wie viele Arten du in deinem Katalog haben kannst, hängt von deinem Tarif ab (siehe Tarife). Die Namen des offiziellen Katalogs werden in deiner Sprache angezeigt, wenn es eine Übersetzung gibt; Arten, die du selbst anlegst, erscheinen so, wie du sie geschrieben hast.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="que-pez-es">Welcher Fisch ist das? KI-Bestimmung</h2>
+    <p>Einen Fisch gefangen und du weißt nicht, welcher es ist? Mach ein Foto und die KI sagt dir die Art. Das Werkzeug findest du auf der Startseite (Schaltfläche <strong>Welcher Fisch ist das?</strong>, die du unter Einstellungen &gt; Obere Schaltflächen ausblenden kannst), im Menü (☰) und in <strong>Neuer Fang</strong> und <strong>Neue Art</strong> neben dem Feld für die Art.</p>
+    <p>Mach ein Foto mit der Kamera oder wähle eines aus der Galerie und tippe auf <strong>Art bestimmen</strong>. Nach wenigen Sekunden siehst du bis zu 3 mögliche Arten, von der wahrscheinlichsten zur unwahrscheinlichsten, mit der Sicherheit in %, dein Foto neben dem des offiziellen Katalogs, die Merkmale, auf die sie achtet, und das ungefähre Mindestmaß deiner Region (prüfe es immer anhand der geltenden Vorschriften). Für bessere Ergebnisse: der ganze Fisch von der Seite, gutes Licht und gut sichtbare Flossen.</p>
+    <p>In einem Fang füllt <strong>Das ist er</strong> die Art aus und fügt sie, wenn sie aus dem offiziellen Katalog stammt, deinen Arten hinzu. Beim Anlegen einer Art füllt <strong>Diese Art verwenden</strong> Name, wissenschaftlichen Namen und Typ aus. Im eigenständigen Werkzeug kannst du das Ergebnis mit einem Freund <strong>teilen</strong>. Überzeugt es dich nicht, gibt dir <strong>Mit Google Lens probieren</strong> kostenlos eine zweite Meinung.</p>
+    <p>Bestimmungen pro Monat: Free 2, Plus 10 und Premium 50. Der Zähler wird jeden Monat zurückgesetzt, und schlägt eine Bestimmung wegen eines Fehlers fehl, wird sie nicht abgezogen. Das Foto wird verkleinert und ohne versteckte Daten (EXIF) nur zur Analyse gesendet und nicht gespeichert; für das Mindestmaß wird deine ungefähre Region verwendet, nie dein genauer Standort. Eine Internetverbindung ist nötig.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="estadisticas">Erweiterte Statistiken</h2>
+    <p>Die erweiterten Statistiken (nur <strong>Premium</strong>) werten deine Fänge aus und zeigen dir, wann und bei welchen Bedingungen du am meisten fängst. Du findest sie im Menü (☰) &gt; <strong>📊 Statistiken ansehen</strong>.</p>
+    <p>Oben wählst du die Art (alle oder eine) und den Zeitraum (letztes Jahr, letzte 3 Jahre oder alles). Die <strong>Übersicht</strong> zeigt Anzahl der Fänge, verschiedene Spots, Durchschnittsgewicht und größtes Gewicht, und <strong>Wann es am besten beißt</strong> sagt dir, was sich am häufigsten wiederholt (Uhrzeit, Mond, Gezeit, Wind…), sofern mindestens 3 Fänge diese Angabe haben.</p>
+    <p>Darunter siehst du die Fänge pro Monat (der beste Monat hervorgehoben), nach Tageszeit (Morgen 6–14 Uhr, Nachmittag 14–21 Uhr, Nacht 21–6 Uhr) und zwei aufklappbare Bereiche zu Wetter und Meer: Wind, Regen, Wolken, Mondphase, Seegang, Dünung, Wellenperiode, Gezeit, Klarheit und Farbe des Wassers. Je mehr Daten du bei deinen Fängen einträgst, desto genauer werden sie. Der Modus <strong>Alle Nutzer</strong> zeigt Statistiken zu den öffentlichen Fängen aller rund um deinen Standort, einen Punkt auf der Karte oder einen deiner Angelplätze (10 bis 100 km, nur Arten aus dem offiziellen Katalog). Die Daten sind anonym, ohne Namen oder genaue Punkte, und um sie zu sehen, musst du mindestens 3 öffentliche Fänge beitragen.</p>
+    <p><strong>Nach Spot-Typ</strong> und <strong>Nach Köder-Typ</strong> zeigen dir, wie viele Fänge du hast und ihr Durchschnittsgewicht je Typ (Strand, Felsen, Hafen…; Gummiköder, Jig, Wobbler…), einschließlich deiner eigenen Typen ★. Beim Köder-Typ zählen nur Fänge mit Köder.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="equipamiento">Ausrüstung</h2>
+    <p>Im Seitenmenü (☰) fasst der Bereich <strong>Ausrüstung</strong> zusammen, was du zum Angeln mitnimmst: Köder und Kunstköder, Ruten, Rollen und Schnüre sowie Sonstiges.</p>
+    <h3>Köder und Kunstköder</h3>
+    <p>Hier führst du deinen eigenen Katalog aus Naturködern (Würmer, Sardine, Kalmar…) und Kunstködern (Gummiköder, Wobbler, Jigs…). Die Schaltfläche oben wechselt den Filter zwischen <strong>Alle</strong>, <strong>Kunstköder</strong> und <strong>Naturköder</strong>, und daneben legt <strong>+ Neu</strong> einen an:</p>
+    <ul>
+      <li>Wähle, ob es ein <strong>Kunstköder</strong> oder ein <strong>Naturköder</strong> ist (lässt sich später nicht ändern).</li>
+      <li><strong>Name</strong> und <strong>Beschreibung</strong> (Farbe, Größe, Gewicht, wie du ihn einsetzt…).</li>
+      <li>Bei einem Kunstköder sein <strong>Typ</strong> (Popper, Gummiköder, Blinker, Jig, Wobbler…), optional.</li>
+      <li><strong>Foto</strong>, optional.</li>
+    </ul>
+    <p>Jede Karte zeigt Foto, Name, Beschreibung und in <strong>wie vielen Fängen</strong> du ihn verwendet hast. Wenn du einen Fang erfasst, wähle den Kunstköder und/oder Naturköder, mit dem du ihn gefangen hast (beides optional) – mit der Zeit siehst du, was am besten funktioniert. Löschst du einen bereits verwendeten Köder, werden deine Fänge nicht gelöscht: Sie haben ihn einfach nicht mehr.</p>
+    <p>Limits: insgesamt 5 Köder im Free-Tarif, 100 im Plus-Tarif und unbegrenzt im Premium-Tarif.</p>
+    <p><strong>Eigene Köder-Typen ★</strong> (ab dem Plus-Plan): Wenn dein Köder in keinen Typ passt, tippe in der Typauswahl auf <strong>+ Neu</strong> und lege deinen eigenen an (zum Beispiel „Tintenfischjig“). Mit <strong>Meine Köder-Typen</strong> benennst du sie um oder löschst sie; wenn du einen löschst, wechseln die Köder, die ihn nutzten, zu „Sonstiges“, das auch zu den Typen von Capturia gehört.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="companeros">Angelfreunde</h2>
+    <p>Ab dem Premium-Tarif kannst du Angelfreunde hinzufügen (Seitenmenü &gt; Meine Angelfreunde, Suche nach Benutzername) und ihnen über die Schaltfläche <strong>Senden</strong> in jedem Eintrag Fänge mit allen Infos (auch Wetter und Meer), Angelplätze, Arten und große Bisse schicken. Empfangen können sie Nutzer ab Plus.</p>
+    <ul>
+      <li><strong>Wenn dich jemand hinzufügt</strong>, bekommst du beim Öffnen der App einen Hinweis; wenn dein Tarif es erlaubt, kannst du ihn mit einem Tippen ebenfalls hinzufügen.</li>
+      <li><strong>Wenn dich jemand als Angelfreund hinzufügt</strong>, erhältst du sofort einen Hinweis (auch bei geöffneter App), mit der Option <strong>Auch hinzufügen</strong>, wenn dein Tarif es erlaubt.</li>
+      <li><strong>Wenn du etwas empfängst</strong>, meldet sich die App beim Öffnen (oder sofort, wenn sie schon offen ist). Du kannst es speichern oder verwerfen. Wenn du diese Art oder diesen Angelplatz schon hast, wird deiner verwendet, statt ihn doppelt anzulegen.</li>
+      <li><strong>Verstecke dich</strong> vor der öffentlichen Suche, indem du in Mein Profil (unten in der Karte „Meine Gegend“) „Für andere Benutzer sichtbar“ ausschaltest, wenn du Capturia nur als Angeltagebuch nutzen möchtest: Dann kann dich niemand finden, um dich hinzuzufügen.</li>
+      <li><strong>Entfernen</strong> (X): Er ist nicht mehr dein Angelfreund.</li>
+      <li><strong>Blockieren</strong> (Schloss, unter dem X): Er wird entfernt und kann dich außerdem nicht mehr hinzufügen oder dir etwas senden. Sendungen, die du noch nicht angenommen hast, werden storniert, und die Fänge und großen Bisse, die er schon von dir angenommen hat, werden beim nächsten Öffnen der App aus seiner Cloud und von seinem Handy gelöscht. Wenn dir jemand etwas schickt, das du nicht willst, kannst du ihn auch direkt im Hinweis blockieren und melden.</li>
+      <li><strong>Entsperren</strong>: in der aufklappbaren Karte „Blockierte Benutzer“. Er wird nicht automatisch wieder dein Angelfreund, und was beim Blockieren gelöscht wurde, kommt nicht zurück.</li>
+    </ul>
+    <p><strong>Was ihr teilt</strong>: In Meine Angelfreunde hat jede Zeile ein Teilen-Symbol. Tippst du darauf, siehst du zwei Reiter: <strong>Du teilst</strong>, deine Fänge mit der Sichtbarkeit Angelfreunde oder Angelfreunde und öffentlich (alle deine Angelfreunde sehen sie), und <strong>Teilt mit dir</strong>, die, die dieser Angelfreund seinen Angelfreunden zeigt. Was ihr euch direkt gesendet habt, erscheint weiterhin, wenn du auf die Zeile tippst.</p>
+    <h3>Gruppen</h3>
+    <p>Gruppen sind Chats zwischen Anglern. Ab dem Plus-Tarif kannst du öffentliche Gruppen suchen und beitreten (bis zu 2 öffentliche und 2 private gleichzeitig); ab Premium kannst du öffentliche oder private Gruppen erstellen (das Auge neben Privat/Öffentlich ändert ebenfalls die Sichtbarkeit) und einladen, wen du willst.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="planes">Tarife</h2>
+    <p>Capturia hat drei Tarife. Das sind ihre wichtigsten Grenzen:</p>
+    <div class="tabla-scroll"><table>
+      <tr><th>Tarif</th><th>Plätze und Arten</th><th>Fänge, Schneidertage und große Bisse</th><th>Fotos pro Fang</th><th>Cloud</th></tr>
+      <tr><td>Free</td><td>je 5</td><td>je 10</td><td>1</td><td>Keine Cloud</td></tr>
+      <tr><td>Plus</td><td>250 Plätze / 200 Arten</td><td>je 500</td><td>3</td><td>500 MB</td></tr>
+      <tr><td>Premium</td><td>Unbegrenzt</td><td>Unbegrenzt</td><td>8 + Video</td><td>2 GB</td></tr>
+    </table></div>
+    <p>Plus bringt außerdem Gruppen, den offiziellen Katalog, App-Hintergründe und das Backup; Premium bringt erweiterte Filter, Senden an Angelfreunde, Gruppen erstellen und ein eigenes Hintergrundfoto. Deinen Tarif und die Details zu jedem findest du im Avatar-Menü &gt; Abo und Tarif.</p>
+    <p>Ohne Verbindung respektiert die App deinen Tarif bis zu dem Datum, an dem das endet, was du bezahlt oder geschenkt bekommen hast (höchstens 30 Tage ohne Verbindung); sobald es Netz gibt, gilt, was der Server sagt.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="ajustes">Einstellungen</h2>
+    <p>Über das Avatar-Menü kommst du zu den Einstellungen, wo du Folgendes ändern kannst:</p>
+    <ul>
+      <li><strong>Sprache</strong> und <strong>Design</strong> (hell oder dunkel) der App.</li>
+      <li><strong>Farben anpassen</strong>: Farbe der Kopfzeile und der unteren Leiste, Symbole der Leiste in Weiß oder Schwarz (alle Tarife) und Farbe der Karten (ab Plus). „Originalfarben wiederherstellen“ stellt die ursprünglichen Farben wieder her.</li>
+      <li><strong>Hintergrund der App</strong>: vorgefertigte Hintergründe oder eine Farbe (ab Plus) oder dein eigenes Foto aus Kamera oder Galerie (ab Premium). Die vorgefertigten Hintergründe stammen von Pixabay.</li>
+      <li><strong>Automatischer Upload</strong> in die Cloud (ab Plus). Wenn du ihn nicht aktivierst, kannst du deine Kopie über das Seitenmenü &gt; Werkzeuge oder vom Startbildschirm aus von Hand sichern und wiederherstellen.</li>
+      <li><strong>Mein Angelgebiet</strong>: das Gebiet, nach dem die Mindestmaße angezeigt werden. Standardmäßig „Automatisch“, nach Land und Region, die du am Anfang gewählt hast. Wird nur auf diesem Handy gespeichert.</li>
+    </ul>
+    <p><strong>Benachrichtigungen</strong>: Sie haben eine eigene Karte in den Einstellungen (zum Aufklappen antippen), mit einem <strong>Hauptschalter</strong> und darunter einem Schalter pro Benachrichtigungsart. Alles ist standardmäßig an. Dein Handy meldet sich, auch wenn Capturia geschlossen ist, wenn <strong>deine beste Angelzeit beginnt</strong> (Tage mit 3★ oder mehr an deinem Hauptplatz der Vorhersage; alle Abos) und ab Plus, wenn dir ein Angelfreund etwas sendet (Fang, Platz, Art oder großer Biss), du eine private Notiz oder ein Treffen bekommst, dich jemand als Angelfreund hinzufügt oder in eine Gruppe einlädt oder eine deiner Arten geprüft wird. Ab Plus wählst du, welche dieser Benachrichtigungen du willst; diese Auswahl wird in deinem Konto gespeichert und gilt für alle deine Handys. <strong>Wenn du den Hauptschalter ausschaltest, bekommst du keinen Hinweis mehr</strong>, auch nicht den zur besten Angelzeit. Nach dem Abmelden erhält dieses Handy keine mehr.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="acerca-de-capturia">Über Capturia</h2>
+    <p>Im Seitenmenü &gt; Hilfe &gt; 🧭 Über Capturia (oder über die Schaltfläche Über auf dem Startbildschirm) findest du die installierte Version, die Neuigkeiten, die Datenschutzerklärung, Quellen und Lizenzen sowie Möglichkeiten, uns zu schreiben, die App zu bewerten oder sie mit deinen Freunden zu teilen.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="preguntas-frecuentes">Häufige Fragen</h2>
+    <p><strong>Gehen meine Daten verloren, wenn ich die App lösche oder das Handy wechsle?</strong> Nein, solange du eine Kopie in der Cloud hast: Deine Daten werden zuerst auf deinem Handy gespeichert und mit dem Backup auch in der Cloud. Melde dich auf einem neuen Handy an und verwende Daten wiederherstellen (Seitenmenü &gt; Werkzeuge oder Startbildschirm).</p>
+    <p><strong>Wenn ich einen Fang lösche, der schon in der Cloud ist, wird er dort auch gelöscht?</strong> Ja, wenn das Kästchen „Auch in der Cloud löschen“ beim Bestätigen aktiviert bleibt.</p>
+    <p><strong>Kann ich Capturia ohne Verbindung nutzen?</strong> Ja, um deine Daten zu erfassen und anzusehen. Der Abgleich mit der Cloud (Uploads, Sicherungen und ausstehende Löschungen) erfolgt automatisch, sobald die Verbindung wieder da ist.</p>
+    <p><strong>Was bedeutet das ✅ auf einem Foto?</strong> Dass das Foto beim Erfassen des Fangs mit der Kamera aus Capturia aufgenommen und nicht aus der Galerie hochgeladen wurde. Das ist kein absoluter Beweis, aber ein gutes Zeichen dafür, dass das Foto echt ist.</p>
+  </div>
+</main>
+
+<footer>
+  <a href="../de/">Datenschutzerklärung</a> · © 2026 Capturia
+</footer>
+
+</body>
+</html>

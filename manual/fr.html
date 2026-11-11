@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="capturia-manual-version" content="2026-10-30">
+<title>Guide d&#x27;utilisation de Capturia</title>
+<style>
+  :root {
+    --color-fondo: #f7f1e1;
+    --color-tarjeta: #ecdfc0;
+    --color-cabecera: #bc9963;
+    --color-cabecera-texto: #3d2b12;
+    --color-texto: #3d2b12;
+    --color-texto-suave: #6b5b3f;
+    --color-borde: #d8c79f;
+    --color-enlace: #6b4a1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-fondo: #1e1a14;
+      --color-tarjeta: #2a2419;
+      --color-cabecera: #8a6d45;
+      --color-cabecera-texto: #f7f1e1;
+      --color-texto: #f0e9d8;
+      --color-texto-suave: #c9bd9e;
+      --color-borde: #4a3f2c;
+      --color-enlace: #e0c48a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  header {
+    background: var(--color-cabecera);
+    color: var(--color-cabecera-texto);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+  }
+  header p {
+    margin: 0;
+    opacity: 0.85;
+    font-size: 0.9rem;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+  .tarjeta {
+    background: var(--color-tarjeta);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    border: 1px solid var(--color-borde);
+  }
+  h2 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: var(--color-texto);
+  }
+  h3 {
+    font-size: 0.95rem;
+    margin: 16px 0 6px 0;
+    color: var(--color-texto);
+  }
+  p, li {
+    font-size: 0.92rem;
+    color: var(--color-texto);
+  }
+  ul {
+    margin: 6px 0;
+    padding-inline-start: 20px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  a {
+    color: var(--color-enlace);
+  }
+  .indice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .indice li {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  .nota {
+    font-size: 0.82rem;
+    color: var(--color-texto-suave);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--color-borde);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--color-texto-suave);
+  }
+
+  .idiomas { display:flex; flex-wrap:wrap; justify-content:center; gap:6px 12px; margin-top:10px; font-size:0.82rem; }
+  .idiomas a { color: var(--color-cabecera-texto); text-decoration:none; opacity:0.85; }
+  .idiomas a.activo { font-weight:700; opacity:1; text-decoration:underline; }
+  ol { margin: 6px 0; padding-inline-start: 22px; }
+  .tabla-scroll { overflow-x:auto; }
+  [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+</style>
+<style>/* barra-capturia */
+.cw-barra{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:8px 16px;background:#0b2f40;color:#f7f1e1;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.cw-barra a{color:#f7f1e1;text-decoration:none}
+.cw-marca{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1.05rem}
+.cw-marca img{width:30px;height:30px;border-radius:8px;background:#f7f1e1}
+.cw-inicio{margin-inline-start:auto;font-size:.9rem;padding:5px 12px;border:1px solid rgba(247,241,225,.35);border-radius:8px}
+.cw-inicio:hover{background:rgba(247,241,225,.12)}
+</style>
+</head>
+<body>
+<!-- barra-capturia -->
+<nav class="cw-barra" aria-label="Capturia"><a class="cw-marca" href="https://capturia.es/fr/"><img src="https://capturia.es/assets/logo.png" alt=""><span>Capturia</span></a><a class="cw-inicio" href="https://capturia.es/fr/">← Accueil</a></nav>
+
+<header>
+  <h1>🎣 Guide d'utilisation de Capturia</h1>
+  <p>Mis à jour le 28 octobre 2026</p>
+  <nav class="idiomas"><a href="es.html" hreflang="es">Español</a> <a href="en.html" hreflang="en">English</a> <a href="fr.html" hreflang="fr" class="activo">Français</a> <a href="it.html" hreflang="it">Italiano</a> <a href="pt.html" hreflang="pt">Português</a> <a href="de.html" hreflang="de">Deutsch</a> <a href="ar.html" hreflang="ar">العربية</a></nav>
+</header>
+
+<!-- Contenido del manual: la app lo descarga y muestra este <main> dentro de su propia pantalla
+     (con copia guardada para leerlo sin conexión). Generado a partir del manual en Claude Docs. -->
+<main id="contenido-manual">
+<div class="tarjeta">
+    <h2 id="indice">Sommaire</h2>
+    <ul class="indice">
+      <li><a href="#bienvenue">Bienvenue</a></li>
+      <li><a href="#premiers-pas">Premiers pas</a></li>
+      <li><a href="#se-deplacer-dans-l-app">Se déplacer dans l'app</a></li>
+      <li><a href="#spots">Spots</a></li>
+      <li><a href="#captures">Captures</a></li>
+      <li><a href="#bredouilles-et-grosses-touches">Bredouilles et grosses touches</a></li>
+      <li><a href="#calendrier">Calendrier</a></li>
+      <li><a href="#especes">Espèces</a></li>
+      <li><a href="#que-pez-es">Quel poisson est-ce ?</a></li>
+      <li><a href="#estadisticas">Statistiques avancées</a></li>
+      <li><a href="#equipement">Équipement</a></li>
+      <li><a href="#compagnons">Compagnons</a></li>
+      <li><a href="#offres">Offres</a></li>
+      <li><a href="#reglages">Réglages</a></li>
+      <li><a href="#a-propos-de-capturia">À propos de Capturia</a></li>
+      <li><a href="#questions-frequentes">Questions fréquentes</a></li>
+    </ul>
+  </div>
+
+  <div class="tarjeta">
+    <h2 id="bienvenue">Bienvenue</h2>
+    <p>Capturia est ton carnet de pêche numérique : enregistre tes spots, tes prises (avec photos, poids et conditions du jour) et aussi les jours où rien n'a mordu. Tout est enregistré sur ton téléphone et, si tu le souhaites, sauvegardé dans le cloud. Avec le temps, il devient ton propre historique de pêche : quelle espèce mord le mieux à quel spot, avec quelle marée, avec quel vent.</p>
+    <p>Ce guide s'enrichit petit à petit, au fil de l'évolution de l'app.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="premiers-pas">Premiers pas</h2>
+    <ol>
+      <li>En ouvrant l'app, tu verras l'écran d'accueil, dans la langue de ton téléphone (tu pourras la changer ensuite dans les Réglages). Entre avec <strong>Continuer avec Google</strong> ou avec ton e-mail : <strong>Ou connectez-vous avec e-mail</strong> si tu as déjà un compte, ou <strong>S'inscrire</strong> pour en créer un nouveau. Si tu avais déjà un compte, tu arrives directement à l'Accueil.</li>
+      <li>Si tu es nouveau, choisis ta zone de pêche à la main (continent, pays et, en Espagne, communauté autonome). Tu peux passer du thème clair au thème sombre quand tu veux dans les Réglages.</li>
+      <li>Choisis ton nom d'utilisateur : l'app vérifie tout de suite s'il est libre. Une fois fixé, il ne peut plus être modifié.</li>
+      <li>Ton catalogue commence avec cinq espèces déjà chargées : Dorade royale, Bar, Calmar, Poulpe et Saumon.</li>
+      <li>Tu commences avec l'offre Free. Ton offre se trouve dans le menu de l'avatar &gt; Abonnement et offre.</li>
+    </ol>
+  </div>
+  <div class="tarjeta">
+    <h2 id="se-deplacer-dans-l-app">Se déplacer dans l'app</h2>
+    <ul>
+      <li><strong>Écran d'accueil</strong> : de grands boutons pour ce que tu utilises le plus (ajouter une prise, calendrier, prises, appâts et leurres, réglages, guide, À propos…). Ceux que ton offre n'inclut pas affichent un cadenas. Ton profil se trouve dans le menu de l'avatar.</li>
+      <li><strong>Barre inférieure</strong> : Espèces, Spots, Captures, Bredouilles, Calendrier et Alléluia ! (nouvelle prise). Le bouton de la section où tu te trouves est marqué d'une bordure plus foncée et d'un fond plus clair.</li>
+      <li><strong>Menu latéral</strong> (☰) : tes liens, Équipement (appâts et leurres), Outils, Communauté, et Aide (guide et À propos de Capturia). En haut à droite, il a un raccourci vers 🏠 Accueil.</li>
+      <li><strong>Menu de l'avatar</strong> (ta photo, en haut à droite) : 🏠 Accueil, Mon profil, Réglages, Abonnement et offre, et Se déconnecter.</li>
+    </ul>
+  </div>
+  <div class="tarjeta">
+    <h2 id="spots">Spots</h2>
+    <p>Un spot est un endroit où tu pêches : un lac de barrage, un tronçon de rivière, une plage. Depuis Spots, touche <strong>+ Nouveau</strong> et remplis :</p>
+    <ul>
+      <li><strong>Nom</strong> et <strong>type de spot</strong> (lac de barrage, rivière, mer, etc.).</li>
+      <li><strong>Photo</strong>, facultative.</li>
+      <li><strong>Localisation</strong> : tu peux utiliser ta position GPS actuelle.</li>
+      <li><strong>Visibilité</strong> : public ou privé. Un spot public peut être vu par toute personne qui reçoit une de tes prises faite à cet endroit ; un spot privé, non.</li>
+    </ul>
+    <p>Chaque spot indique combien de prises et de bredouilles tu y as enregistrées. La carte a deux icônes : la <strong>rouge</strong> ouvre le spot dans ton appli de cartes (grisée si le spot n'a pas de position) et la <strong>bleue</strong> l'envoie à un compagnon (offre Premium). Touche la carte pour ouvrir <strong>Voir le spot</strong> : en haut se trouvent <strong>Modifier</strong>, <strong>Supprimer</strong> et l'icône d'envoi. Si tu supprimes un spot qui a des prises, des bredouilles ou des grosses touches, elles ne sont pas supprimées : elles restent sans spot, marquées comme en attente, et tu peux leur en attribuer un autre ensuite. Avec la <strong>loupe</strong>, à côté de « Tous les spots », tu cherches un spot par son nom en tapant.</p>
+    <p><strong>Types personnels ★</strong> (à partir du forfait Plus) : si aucun type de Capturia ne te convient, en choisissant le type touche <strong>+ Nouveau</strong> et écris le tien (par exemple « Épi »). Il apparaît marqué d’une ★ à côté des types habituels, est enregistré avec tes données et dans ta copie cloud, et compte dans les statistiques. Avec <strong>Mes types de spot</strong>, dans le même sélecteur, tu les renommes ou les supprimes ; si tu en supprimes un, les spots qui l’utilisaient passent à « Autre ». Quand tu envoies un spot à un compagnon, son type personnel lui arrive par son nom.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="captures">Captures</h2>
+    <p>Depuis Captures, touche <strong>+🎣</strong>, à côté de la recherche (ou Alléluia ! dans la barre inférieure), pour enregistrer un poisson. Tu peux ajouter :</p>
+    <ul>
+      <li><strong>Espèce</strong> et <strong>spot</strong> (obligatoires), <strong>poids</strong> et <strong>taille</strong>.</li>
+      <li><strong>Taille minimale</strong> : une fois l’espèce et le spot choisis, sous la mesure tu vois la taille minimale de cette zone, en rouge si ta prise est en dessous (voir Espèces).</li>
+      <li><strong>Photos ou vidéo</strong> de la prise.</li>
+      <li><strong>Prise multiple</strong> : si tu as pris plusieurs poissons d'un coup, enregistre-les comme une seule entrée ; dans ce cas, tu indiques la <strong>quantité</strong> au lieu de la taille.</li>
+      <li><strong>Leurre et appât</strong> (sous la quantité ou la taille) : choisis ceux que tu as utilisés dans ta liste Équipement. Ils sont facultatifs ; si tu n'en as encore créé aucun, le champ t'invite à le faire dans Équipement.</li>
+      <li><strong>Conditions du jour</strong> : les données météo (vent, pluie, nébulosité et phase lunaire) sont récupérées automatiquement avec le bouton météo, à partir du spot ou de ta position ; le reste, tu le notes toi-même : marée, type de marée, clarté et couleur de l'eau, état de la mer, canne, moulinet, appât ou leurre. Tout est facultatif, mais plus tu remplis, plus ton historique devient utile avec le temps.</li>
+      <li><strong>Visibilité</strong> : privée ou publique pour tes compagnons.</li>
+    </ul>
+    <p>La barre en haut de Captures a deux lignes. Dans la première, tu filtres par <strong>espèce</strong> ou par <strong>spot</strong>, et avec <strong>+ Filtres</strong> tu accèdes aux filtres avancés (dates, poids, type de prise, leurre, appât et conditions précises), disponibles à partir de l'offre Premium. Dans la seconde, tu as la <strong>recherche</strong>, qui filtre par nom d'espèce pendant que tu écris, le bouton <strong>+🎣</strong> pour enregistrer une prise et le bouton <strong>👥🎣</strong> des prises de tes compagnons. Pour partager la photo d'une prise, appuie longuement sur sa carte (ou touche ⋮) et choisis Partager.</p>
+    <p>Les prises de tes compagnons <strong>ne se mélangent jamais avec les tiennes</strong> : tu peux montrer ta liste à qui tu veux. Pour les voir, touche <strong>👥🎣</strong> : sa bordure devient rouge et la liste n'affiche que les prises de tes compagnons. Celles qu'on t'a envoyées et que tu as enregistrées ont une <strong>bordure rouge à gauche</strong> ; les prises publiques de tes compagnons (à partir de Premium), une <strong>bordure bleu clair</strong> et le nom de celui qui l'a enregistrée. Touche à nouveau le bouton pour revoir les tiennes. Les prises des compagnons peuvent être consultées (et celles reçues, supprimées), mais pas modifiées ni renvoyées.</p>
+    <p>Sur tes prises, <strong>👥 Partagée avec les compagnons</strong> indique que tes compagnons la voient (visibilité Compagnons ou Compagnons et publique) et <strong>✅ Publiée sur la carte</strong>, qu’elle apparaît sur la carte des prises publiques. Parmi celles des compagnons, les publiques portent <strong>Publiée par</strong> et le nom de qui l’a enregistrée, et les reçues, <strong>Envoyée par</strong>. Si un compagnon t’a envoyé une prise qu’il a aussi publiée, elle n’apparaît qu’une fois, avec « Envoyée par … · également publiée ». Dans <strong>+ Filtres</strong>, la carte <strong>👥 Compagnons</strong> te permet de cocher les compagnons dont tu veux voir les prises ; sans en cocher aucun, tu vois celles de tous. Quand tu envoies une prise, elle part avec son leurre (et son type, même personnel).</p>
+    <h3>Photos vérifiées ✅</h3>
+    <p>Lorsque vous ajoutez une photo à une prise, Capturia vous demande si vous voulez <strong>prendre la photo</strong> maintenant ou <strong>la choisir dans la galerie</strong>. Les photos prises à ce moment-là avec l'appareil photo depuis Capturia sont <strong>vérifiées</strong> : elles portent le badge ✅ dans la prise et la carte affiche « Photo vérifiée ». Les photos de la galerie (et celles d'Importer depuis ma galerie) n'ont pas le badge, car elles peuvent venir de n'importe où ou être retouchées. Si vous voulez que vos compagnons sachent que votre poisson est réel, prenez la photo depuis Capturia.</p>
+    <h3>Voir, modifier ou supprimer une prise</h3>
+    <p>Touche une carte pour ouvrir <strong>Voir la prise</strong>. En haut se trouvent <strong>Modifier</strong>, <strong>Supprimer</strong> et l'icône d'envoi. Quand tu touches Modifier, « Modifier » devient <strong>Enregistrer</strong> (activé dès que tu changes quelque chose, y compris les photos, la couverture ou la vidéo) et « Supprimer » devient <strong>Annuler</strong> (annule les modifications). Espèces et Spots fonctionnent de la même façon.</p>
+    <p>Lors de la suppression, la case <strong>« Supprimer aussi dans le cloud »</strong> (cochée par défaut) décide si ta copie dans le cloud est aussi supprimée, pas seulement celle de ton téléphone. Si tu n'as pas de connexion à ce moment-là, l'app te prévient et le fait toute seule dès que tu la retrouves ou que tu rouvres l'app. C'est pareil pour Spots, Espèces, Bredouilles et Grosses touches.</p>
+    <p><strong>Supprimer plusieurs à la fois</strong> : maintiens appuyée une carte (ou touche ⋮) et choisis <strong>Supprimer plusieurs</strong>, la dernière option du menu. L’écran passe en mode sélection avec cette carte déjà cochée : touche les autres que tu veux, utilise <strong>Tous</strong> pour toutes les cocher ou décocher et appuie sur le bouton rouge 🗑 avec le nombre. Tu confirmes une seule fois, avec la même case du cloud, et elles sont supprimées avec les mêmes règles qu’une par une. <strong>Annuler</strong> quitte le mode sélection. C’est disponible dans Captures, Espèces (avec la case « Supprimer aussi leurs prises » : si tu ne la coches pas, les espèces avec des prises ne sont pas supprimées), Spots, Bredouilles, Appâts et leurres et le reste de l’Équipement.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="bredouilles-et-grosses-touches">Bredouilles et grosses touches</h2>
+    <p>Tout n'est pas prise : dans Bredouilles, tu gardes aussi les jours où rien n'a mordu. Une <strong>bredouille</strong> enregistre la date, le spot, les heures de pêche et les conditions du jour, comme une prise mais sans poisson. Avec le temps, elle t'aide à savoir quelles conditions ne marchent pas à chaque spot.</p>
+    <p>Une <strong>grosse touche</strong>, c'est celle qui t'a échappé : tu as senti la traction ou la ligne a cassé, mais le poisson n'est jamais sorti. Tu peux noter les espèces que tu soupçonnes et s'il y a eu casse. Les deux s'enregistrent depuis le même écran, avec l'interrupteur grosse touche, et la liste se filtre avec <strong>Toutes / Bredouilles / Touches</strong>.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="calendrier">Calendrier</h2>
+    <p>Le bouton <strong>Calendrier</strong> de la barre inférieure (entre Bredouilles et Alléluia !) ouvre une vue mensuelle avec un point de couleur pour chaque jour où tu as enregistré quelque chose : prises, bredouilles et grosses touches. Touche un jour pour voir ce que tu as noté et ouvrir cette fiche en lecture seule.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="especes">Espèces</h2>
+    <p>L’écran Espèces affiche <strong>ton catalogue</strong> : les espèces présentes sur ton téléphone (les cinq de départ, celles que tu ajoutes depuis la liste publique et celles que tu crées toi-même). Chaque carte montre la photo, le type, ton nombre de prises et la <strong>taille minimale de ta zone</strong>. Il se synchronise avec ta copie dans le cloud manuellement ou automatiquement, selon les Réglages.</p>
+    <p>Utilise la <strong>loupe</strong>, à côté de « Toutes les espèces », pour chercher par nom commun ou scientifique. Touche une carte pour ouvrir <strong>Voir l’espèce</strong> : en haut, tu as <strong>Modifier</strong>, <strong>Supprimer</strong> et l’icône pour l’envoyer à un compagnon. En supprimant une espèce, le même avertissement que pour les Spots et les Prises s’affiche, avec l’option de la supprimer aussi du cloud. Si elle a des prises, elles sont supprimées avec elle : l’app t’indique combien et te demande de taper le mot de confirmation.</p>
+    <h3>Liste publique des espèces (catalogue officiel)</h3>
+    <p>C’est le catalogue officiel de Capturia, vérifié par l’équipe, avec une photo de chaque espèce. Il se trouve dans le menu (☰) &gt; Données &gt; <strong>🐟 Liste publique des espèces</strong>, à partir de l’offre Plus.</p>
+    <ul>
+      <li><strong>Zone</strong> : la liste se filtre par zone (Atlantique européen, mer Cantabrique, Méditerranée…). La tienne est choisie à l’ouverture ; tu peux en prendre une autre ou « Toutes les zones ». Tu peux aussi chercher par nom et filtrer par type.</li>
+      <li><strong>Informations détaillées</strong> : touche le nom d’une espèce (ou la flèche ▾) pour déplier sa carte, avec la photo en grand, le nom, le nom scientifique, le type, son habitat et la taille minimale. <strong>📖 En détail</strong> ouvre sa fiche complète : chiffres clés, comment la reconnaître, où elle vit, ce qu’elle mange, sa reproduction, comment la pêcher et une anecdote. Si elle n’a pas encore de fiche, le bouton apparaît grisé.</li>
+      <li><strong>Ajouter à ton catalogue</strong> : touche ⊕. Tu obtiens ta propre copie, que tu peux modifier ou retirer quand tu veux. Celles que tu as déjà n’apparaissent pas ; active « Afficher aussi celles que j’ai déjà » pour les voir avec un ✓.</li>
+    </ul>
+    <p><strong>L’espèce officielle ou la tienne ?</strong> Si l’espèce est dans la liste publique, ajoute-la depuis là : elle arrive avec sa photo, son nom dans ta langue, son nom scientifique et ses tailles par zone, tenues à jour par l’équipe Capturia. Ne crée une espèce toi-même que si elle n’y est pas ; si tu la rends publique, tu la proposes pour le catalogue et l’équipe la vérifie. Quand tu choisis une espèce officielle dans une prise (aussi avec Quel poisson est-ce ?), elle passe automatiquement dans ton catalogue, sans doublon si tu l’avais déjà. Si le catalogue change la photo d’une espèce que tu as, en la modifiant tu verras <strong>Utiliser la photo officielle</strong> : ta photo ne change jamais si tu ne le choisis pas.</p>
+    <p>Si tu crées une espèce à la main et que son nom correspond à une espèce du catalogue officiel, l’app te prévient : <strong>Utiliser l’officielle</strong> l’ajoute à tes espèces avec sa photo, ses tailles et sa fiche, et <strong>Créer la mienne</strong> continue avec la tienne. Si tu proposes comme publique une espèce qui était déjà dans le catalogue, l’équipe te le signalera au lieu de la vérifier.</p>
+    <h3>Taille minimale selon ta zone</h3>
+    <p>Une même espèce peut avoir des tailles minimales différentes selon l’endroit de pêche (par exemple, le pageot acarné : 17 cm en général et 25 cm en mer Cantabrique). C’est pourquoi les espèces officielles ont une taille par zone, et la fiche <strong>En détail</strong> les affiche toutes, avec la tienne mise en avant.</p>
+    <ul>
+      <li><strong>Ta zone</strong> vient du pays et de la région choisis au départ. Tu la changes dans Réglages &gt; <strong>Ma zone de pêche</strong>.</li>
+      <li><strong>Dans une prise</strong>, sous la mesure, tu vois la taille minimale du spot choisi (sa zone est calculée à partir de sa position). Si la mesure ou le poids sont inférieurs, l’avertissement passe en rouge.</li>
+      <li>La zone est calculée sur ton téléphone et n’est envoyée nulle part.</li>
+    </ul>
+    <p>Les tailles sont indicatives : vérifie toujours la réglementation en vigueur dans ta zone. Les espèces que tu crées n’ont qu’une seule taille, celle que tu saisis.</p>
+    <p>Le nombre d'espèces que tu peux avoir dans ton catalogue dépend de ton offre (voir Offres). Les noms du catalogue officiel s'affichent dans ta langue quand une traduction existe ; les espèces que tu crées s'affichent telles que tu les as écrites.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="que-pez-es">Quel poisson est-ce ? Identification par IA</h2>
+    <p>Tu as sorti un poisson et tu ne sais pas ce que c'est ? Prends-le en photo et l'IA te dit de quelle espèce il s'agit. L'outil se trouve sur l'Accueil (bouton <strong>Quel poisson est-ce ?</strong>, que tu peux masquer dans Réglages &gt; Boutons du haut), dans le menu (☰) et dans <strong>Nouvelle prise</strong> et <strong>Nouvelle espèce</strong>, à côté du champ de l'espèce.</p>
+    <p>Prends une photo avec l'appareil ou choisis-en une dans ta galerie et touche <strong>Identifier l’espèce</strong>. En quelques secondes tu vois jusqu'à 3 espèces possibles, de la plus à la moins probable, avec le % de certitude, ta photo à côté de celle du catalogue officiel, les caractères observés et la taille minimale indicative de ta zone (vérifie-la toujours avec la réglementation en vigueur). Pour un meilleur résultat : le poisson entier et de profil, avec une bonne lumière et les nageoires bien visibles.</p>
+    <p>Depuis une prise, <strong>C’est celui-ci</strong> remplit l'espèce et, si elle vient du catalogue officiel, l'ajoute à tes espèces. En créant une espèce, <strong>Utiliser cette espèce</strong> remplit le nom, le nom scientifique et le type. Depuis l'outil seul, tu peux <strong>partager</strong> le résultat avec un ami. Si tu n'es pas convaincu, <strong>Essayer Google Lens</strong> te donne un deuxième avis gratuit.</p>
+    <p>Identifications par mois : Free 2, Plus 10 et Premium 50. Le compteur repart à zéro chaque mois et, si une identification échoue à cause d'une erreur, elle n'est pas décomptée. La photo est envoyée réduite et sans données cachées (EXIF) uniquement pour l'analyser, et elle n'est pas conservée ; pour la taille minimale, on utilise ta zone approximative, jamais ta position exacte. Une connexion internet est nécessaire.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="estadisticas">Statistiques avancées</h2>
+    <p>Les statistiques avancées (réservées à <strong>Premium</strong>) analysent tes prises pour te dire quand et dans quelles conditions tu pêches le plus. Elles sont dans le menu (☰) &gt; <strong>📊 Voir les statistiques</strong>.</p>
+    <p>En haut, tu choisis l'espèce (toutes ou une seule) et la période (dernière année, 3 dernières années ou tout). Le <strong>résumé</strong> affiche le nombre de prises, les spots différents, le poids moyen et le plus gros poids, et <strong>Quand ça mord le plus</strong> t'indique ce qui se répète le plus (heure, lune, marée, vent…) dès qu'au moins 3 prises ont cette donnée.</p>
+    <p>En dessous, tu as les prises par mois (le meilleur mois mis en avant), par moment de la journée (matin 6–14 h, après-midi 14–21 h, nuit 21–6 h) et deux sections dépliables sur la météo et la mer : vent, pluie, nuages, phase lunaire, état de la mer, houle, période de la houle, marée, clarté et couleur de l'eau. Plus tu notes de données dans tes prises, plus elles sont justes. Le mode <strong>Tous les utilisateurs</strong> affiche les statistiques des prises publiques de tous autour de ta position, d’un point de la carte ou de l’un de tes spots (de 10 à 100 km, espèces du catalogue officiel uniquement). Les données sont anonymes, sans noms ni points exacts, et il faut avoir apporté au moins 3 prises publiques pour les voir.</p>
+    <p><strong>Par type de spot</strong> et <strong>Par type de leurre</strong> t’indiquent combien de prises tu as et leur poids moyen pour chaque type (plage, rochers, port… ; leurre souple, jig, minnow…), y compris tes types personnels ★. Pour les leurres, seules les prises avec un leurre comptent.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="equipement">Équipement</h2>
+    <p>Dans le menu latéral (☰), la section <strong>Équipement</strong> rassemble ce que tu emportes pour pêcher : appâts et leurres, cannes, moulinets et fils, et Autres.</p>
+    <h3>Appâts et leurres</h3>
+    <p>Tu y gardes ton propre catalogue d'appâts (vers, sardine, calmar…) et de leurres (leurres souples, minnows, jigs…). Le bouton du haut fait passer le filtre entre <strong>Tous</strong>, <strong>Leurres</strong> et <strong>Appâts</strong>, et à côté <strong>+ Nouveau</strong> en crée un :</p>
+    <ul>
+      <li>Choisis s'il s'agit d'un <strong>leurre</strong> ou d'un <strong>appât</strong> (impossible à changer ensuite).</li>
+      <li><strong>Nom</strong> et <strong>description</strong> (couleur, taille, poids, utilisation…).</li>
+      <li>Pour un leurre, son <strong>type</strong> (popper, leurre souple, cuiller, jig, minnow…), facultatif.</li>
+      <li><strong>Photo</strong>, facultative.</li>
+    </ul>
+    <p>Chaque carte affiche la photo, le nom, la description et dans <strong>combien de prises</strong> tu l'as utilisé. Quand tu enregistres une prise, choisis le leurre et/ou l'appât avec lequel tu l'as faite (tous deux facultatifs) : avec le temps, tu sauras lequel marche le mieux. Si tu supprimes un élément déjà utilisé, tes prises ne sont pas supprimées : elles ne l'ont simplement plus.</p>
+    <p>Limites : 5 appâts et leurres au total en Free, 100 en Plus et illimité en Premium.</p>
+    <p><strong>Types de leurre personnels ★</strong> (à partir du forfait Plus) : si ton leurre n’entre dans aucun type, touche <strong>+ Nouveau</strong> dans le sélecteur de type et crée le tien (par exemple « Turlutte »). Avec <strong>Mes types de leurre</strong>, tu les renommes ou les supprimes ; si tu en supprimes un, les leurres qui l’utilisaient passent à « Autre », qui fait aussi partie des types de Capturia.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="compagnons">Compagnons</h2>
+    <p>À partir de l'offre Premium, tu peux ajouter des compagnons (menu latéral &gt; Mes compagnons, en cherchant par nom d'utilisateur) et leur envoyer, avec le bouton <strong>Envoyer</strong> de chaque fiche, des prises avec toutes leurs informations (y compris météo et mer), des spots, des espèces et des grosses touches. Les utilisateurs Plus ou supérieur peuvent les recevoir.</p>
+    <ul>
+      <li><strong>Quand tu reçois quelque chose</strong>, l'app te prévient à l'ouverture (ou tout de suite si elle est déjà ouverte). Tu peux l'enregistrer ou le refuser. Si tu as déjà cette espèce ou ce spot, le tien est réutilisé au lieu de créer un doublon.</li>
+      <li><strong>Quand quelqu'un t'ajoute comme compagnon</strong>, tu reçois un avis tout de suite (même avec l'app ouverte), avec l'option <strong>Ajouter aussi</strong> si ton offre le permet.</li>
+      <li><strong>Masque-toi</strong> de la recherche publique en désactivant « Visible pour les autres utilisateurs » dans Mon profil (en bas de la carte Ma zone) si tu veux utiliser Capturia seulement comme carnet de pêche : personne ne pourra te trouver pour t'ajouter.</li>
+      <li><strong>Retirer</strong> (X) : il n'est plus ton compagnon.</li>
+      <li><strong>Bloquer</strong> (cadenas, sous le X) : en plus de le retirer, il ne pourra plus t'ajouter ni t'envoyer quoi que ce soit. Les envois qu'il n'avait pas encore acceptés sont annulés, et les prises et grosses touches qu'il avait déjà acceptées sont supprimées de son cloud et de son téléphone la prochaine fois qu'il ouvre l'app. Si quelqu'un t'envoie quelque chose que tu ne veux pas, tu peux aussi le bloquer et le signaler depuis l'avis lui-même.</li>
+      <li><strong>Débloquer</strong> : dans la carte dépliable « Utilisateurs bloqués ». Il ne redevient pas ton compagnon automatiquement et ce qui a été supprimé lors du blocage n'est pas récupéré.</li>
+    </ul>
+    <p><strong>Ce que vous partagez</strong> : dans Mes compagnons, chaque ligne a une icône de partage. En la touchant, tu vois deux onglets : <strong>Vous partagez</strong>, tes prises avec la visibilité Compagnons ou Compagnons et publique (tous tes compagnons les voient), et <strong>Partage avec vous</strong>, celles que ce compagnon laisse voir aux siens. Ce que vous vous êtes envoyé directement apparaît toujours en touchant la ligne.</p>
+    <h3>Groupes</h3>
+    <p>Les groupes sont des discussions entre pêcheurs. À partir de l'offre Plus, tu peux chercher des groupes publics et les rejoindre (jusqu'à 2 publics et 2 privés à la fois) ; à partir de Premium, tu peux créer des groupes publics ou privés (l'œil à côté de Privé/Public change aussi la visibilité) et inviter qui tu veux.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="offres">Offres</h2>
+    <p>Capturia propose trois offres. Voici leurs principales limites :</p>
+    <div class="tabla-scroll"><table>
+      <tr><th>Offre</th><th>Spots et espèces</th><th>Prises, bredouilles et grosses touches</th><th>Photos par prise</th><th>Cloud</th></tr>
+      <tr><td>Free</td><td>5 de chaque</td><td>10 de chaque</td><td>1</td><td>Pas de cloud</td></tr>
+      <tr><td>Plus</td><td>250 spots / 200 espèces</td><td>500 de chaque</td><td>3</td><td>500 Mo</td></tr>
+      <tr><td>Premium</td><td>Illimité</td><td>Illimité</td><td>8 + vidéo</td><td>2 Go</td></tr>
+    </table></div>
+    <p>Plus ajoute aussi les groupes, le catalogue officiel, les fonds de l'app et la sauvegarde ; Premium ajoute les filtres avancés, l'envoi aux compagnons, la création de groupes et ta propre photo de fond. Ton offre et le détail de chacune se trouvent dans le menu de l'avatar &gt; Abonnement et offre.</p>
+    <p>Hors connexion, l'app respecte ton offre jusqu'à la date de fin de ce que tu as payé ou reçu en cadeau (dans la limite de 30 jours sans connexion) ; dès qu'il y a du réseau, c'est le serveur qui décide.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="reglages">Réglages</h2>
+    <p>Depuis le menu de ton avatar, tu ouvres les Réglages, où tu peux changer :</p>
+    <ul>
+      <li>La <strong>langue</strong> et le <strong>thème</strong> (clair ou sombre) de l'app.</li>
+      <li><strong>Personnalisation des couleurs</strong> : couleur de l'en-tête et de la barre inférieure, icônes de la barre en blanc ou en noir (toutes les offres) et couleur des cartes (à partir de Plus). « Restaurer les couleurs d'origine » remet celles de toujours.</li>
+      <li><strong>Fond de l'app</strong> : fonds prédéfinis ou une couleur (à partir de Plus), ou ta propre photo depuis l'appareil photo ou la galerie (à partir de Premium). Les fonds prédéfinis viennent de Pixabay.</li>
+      <li><strong>Envoi automatique</strong> vers le cloud (à partir de Plus). Si tu ne l'actives pas, tu peux enregistrer et récupérer ta copie à la main depuis le menu latéral &gt; Outils ou depuis l'Accueil.</li>
+      <li><strong>Ma zone de pêche</strong> : la zone utilisée pour afficher les tailles minimales. Par défaut « Automatique », selon le pays et la région choisis au départ. Enregistrée uniquement sur ce téléphone.</li>
+    </ul>
+    <p><strong>Notifications</strong> : elles ont leur propre carte dans Réglages (touche-la pour la déplier), avec un <strong>interrupteur général</strong> et, dessous, un interrupteur par type d'alerte. Tout est activé par défaut. Le téléphone te prévient même quand Capturia est fermée quand <strong>commence ta meilleure heure de pêche</strong> (jours à 3★ ou plus sur ton spot principal des Prévisions ; tous les abonnements) et, à partir de Plus, quand un compagnon t'envoie quelque chose (prise, spot, espèce ou grosse touche), que tu reçois une note privée ou une sortie, que quelqu'un t'ajoute comme compagnon ou t'invite dans un groupe, ou qu'une de tes espèces est examinée. À partir de Plus, tu choisis lesquelles de ces alertes tu veux recevoir ; ce choix est enregistré dans ton compte et vaut pour tous tes téléphones. <strong>Si tu désactives l'interrupteur général, tu ne reçois plus aucune alerte</strong>, pas même celle de la meilleure heure. Après la déconnexion, ce téléphone n'en reçoit plus.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="a-propos-de-capturia">À propos de Capturia</h2>
+    <p>Dans le menu latéral &gt; Aide &gt; 🧭 À propos de Capturia (ou le bouton À propos de l'Accueil), tu trouves la version installée, les nouveautés, la politique de confidentialité, les crédits et licences, et comment nous écrire, noter l'app ou la partager avec tes amis.</p>
+  </div>
+  <div class="tarjeta">
+    <h2 id="questions-frequentes">Questions fréquentes</h2>
+    <p><strong>Est-ce que je perds mes données si je supprime l'app ou si je change de téléphone ?</strong> Non, tant que tu as ta copie dans le cloud : tes données sont d'abord enregistrées sur ton téléphone et, avec la sauvegarde, aussi dans le cloud. Sur un nouveau téléphone, connecte-toi et utilise Récupérer les données (menu latéral &gt; Outils ou Accueil).</p>
+    <p><strong>Si je supprime une prise déjà dans le cloud, est-elle supprimée là aussi ?</strong> Oui, si tu laisses cochée la case « Supprimer aussi dans le cloud » en confirmant la suppression.</p>
+    <p><strong>Puis-je utiliser Capturia hors connexion ?</strong> Oui, pour enregistrer et consulter tes données. La synchronisation avec le cloud (envois, sauvegardes et suppressions en attente) se fait toute seule dès que la connexion revient.</p>
+    <p><strong>Que signifie le ✅ sur une photo ?</strong> Que la photo a été prise avec l'appareil photo depuis Capturia au moment d'enregistrer la prise, et non importée de la galerie. Ce n'est pas une preuve absolue, mais c'est un bon signe que la photo est authentique.</p>
+  </div>
+</main>
+
+<footer>
+  <a href="../fr/">Politique de confidentialité</a> · © 2026 Capturia
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eliminar tu cuenta · Capturia</title>
+<style>
+  :root {
+    --color-fondo: #f7f1e1;
+    --color-tarjeta: #ecdfc0;
+    --color-cabecera: #bc9963;
+    --color-cabecera-texto: #3d2b12;
+    --color-texto: #3d2b12;
+    --color-texto-suave: #6b5b3f;
+    --color-borde: #d8c79f;
+    --color-enlace: #6b4a1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-fondo: #1e1a14;
+      --color-tarjeta: #2a2419;
+      --color-cabecera: #8a6d45;
+      --color-cabecera-texto: #f7f1e1;
+      --color-texto: #f0e9d8;
+      --color-texto-suave: #c9bd9e;
+      --color-borde: #4a3f2c;
+      --color-enlace: #e0c48a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  header {
+    background: var(--color-cabecera);
+    color: var(--color-cabecera-texto);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+  }
+  header p {
+    margin: 0;
+    opacity: 0.85;
+    font-size: 0.9rem;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+  .tarjeta {
+    background: var(--color-tarjeta);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    border: 1px solid var(--color-borde);
+  }
+  h2 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: var(--color-texto);
+  }
+  h3 {
+    font-size: 0.95rem;
+    margin: 16px 0 6px 0;
+    color: var(--color-texto);
+  }
+  p, li {
+    font-size: 0.92rem;
+    color: var(--color-texto);
+  }
+  ul {
+    margin: 6px 0;
+    padding-inline-start: 20px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  a {
+    color: var(--color-enlace);
+  }
+  .indice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .indice li {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  .nota {
+    font-size: 0.82rem;
+    color: var(--color-texto-suave);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--color-borde);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--color-texto-suave);
+  }
+  .idiomas { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 12px; margin-top: 10px; font-size: 0.82rem; }
+  .idiomas a { color: var(--color-cabecera-texto); opacity: 0.85; }
+</style>
+<style>/* barra-capturia */
+.cw-barra{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:8px 16px;background:#0b2f40;color:#f7f1e1;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.cw-barra a{color:#f7f1e1;text-decoration:none}
+.cw-marca{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1.05rem}
+.cw-marca img{width:30px;height:30px;border-radius:8px;background:#f7f1e1}
+.cw-inicio{margin-inline-start:auto;font-size:.9rem;padding:5px 12px;border:1px solid rgba(247,241,225,.35);border-radius:8px}
+.cw-inicio:hover{background:rgba(247,241,225,.12)}
+</style>
+</head>
+<body>
+<!-- barra-capturia -->
+<nav class="cw-barra" aria-label="Capturia"><a class="cw-marca" href="https://capturia.es/"><img src="https://capturia.es/assets/logo.png" alt=""><span>Capturia</span></a><a class="cw-inicio" href="https://capturia.es/">← Inicio</a></nav>
+
+<header>
+  <h1>🎣 Eliminar tu cuenta de Capturia</h1>
+  <p>Capturia · desarrollada por Capturia Spain</p>
+  <nav class="idiomas"><strong>Español</strong> <a href="en/" hreflang="en">English</a> <a href="fr/" hreflang="fr">Français</a> <a href="it/" hreflang="it">Italiano</a> <a href="pt/" hreflang="pt">Português</a> <a href="de/" hreflang="de">Deutsch</a> <a href="ar/" hreflang="ar">العربية</a></nav>
+</header>
+
+<main>
+
+  <div class="tarjeta">
+    <h2>Desde la app (inmediato)</h2>
+    <ol>
+      <li>Abre Capturia e inicia sesión.</li>
+      <li>Toca tu foto de perfil (arriba a la derecha) y entra en <strong>Mi perfil</strong>.</li>
+      <li>Baja hasta el final y toca <strong>Eliminar mi cuenta</strong>.</li>
+      <li>Confirma escribiendo la palabra que te pide la app.</li>
+    </ol>
+    <p>La cuenta y sus datos se borran en ese momento y se cierra la sesión.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Sin la app (por email)</h2>
+    <p>Si ya no tienes la app instalada, escríbenos a <a href="mailto:capturiaSpain@gmail.com?subject=Eliminar%20mi%20cuenta%20de%20Capturia">capturiaSpain@gmail.com</a> desde el email con el que te registraste, con el asunto <em>"Eliminar mi cuenta de Capturia"</em>. La eliminaremos en un plazo máximo de 30 días y te confirmaremos por email cuando esté hecho.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Borrar solo algunos datos (sin eliminar la cuenta)</h2>
+    <p>Desde la app puedes borrar cuando quieras cualquier captura, sitio, especie propia, bolo, gran picada, foto, vídeo, nota, quedada, pieza de equipo, cebo o enlace: abre su ficha y toca <strong>Eliminar</strong>. Se borra del móvil y de la nube. También puedes cambiar o quitar tu foto de perfil desde <strong>Mi perfil</strong>.</p>
+    <p>Si prefieres que lo hagamos nosotros, escríbenos a <a href="mailto:capturiaSpain@gmail.com?subject=Eliminar%20datos%20de%20Capturia">capturiaSpain@gmail.com</a> desde el email de tu cuenta indicando qué datos quieres borrar. Lo haremos en un plazo máximo de 30 días.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Qué se borra</h2>
+    <ul>
+      <li>Tu cuenta de acceso (email, inicio de sesión con Google o Apple) y tu perfil (nombre de usuario, foto, ajustes, enlaces).</li>
+      <li>Tus capturas, sitios, especies propias, bolos y grandes picadas, con todas sus fotos y vídeos guardados en la nube.</li>
+      <li>Tus notas, quedadas, mensajes en los grupos, equipo (cañas, carretes, sedales y otros), cebos y señuelos, enlaces y tus consultas de «¿Qué pez es?».</li>
+      <li>Tu lista de compañeros, los envíos pendientes y los grupos que hayas creado.</li>
+      <li>Tu historial de plan y suscripciones dentro de Capturia.</li>
+    </ul>
+    <h3>Qué no se borra</h3>
+    <ul>
+      <li>Lo que otros usuarios ya aceptaron de ti (capturas, sitios o especies que les enviaste y guardaron): pasa a ser suyo y queda en su cuenta, sin tu nombre.</li>
+      <li>Los justificantes de compra de Google Play o App Store: los conserva la tienda según su propia política.</li>
+      <li>La copia anónima que Capturia guarda sin fotos de tus capturas en «Pública (mapa)» o «Compañeros y pública» para el mapa de la comunidad (especie, peso, ubicación, fecha y hora): deja de estar vinculada a tu cuenta.</li>
+      <li>Las copias de seguridad técnicas del servidor, si las hay, pueden conservar tus datos hasta 30 días, hasta que se renuevan. La copia anónima para el mapa se conserva sin límite de tiempo.</li>
+    </ul>
+    <p class="nota">Eliminar la cuenta <strong>no cancela</strong> una suscripción activa en Google Play o App Store. Cancélala antes desde la tienda (Google Play → Pagos y suscripciones → Suscripciones) para que no se renueve.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Más información</h2>
+    <p>Consulta nuestra <a href="../">política de privacidad</a> o escríbenos a <a href="mailto:capturiaSpain@gmail.com">capturiaSpain@gmail.com</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  Capturia — Eliminación de cuenta
+</footer>
+
+</body>
+</html>

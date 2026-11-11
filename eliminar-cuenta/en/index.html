@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete your account · Capturia</title>
+<style>
+  :root {
+    --color-fondo: #f7f1e1;
+    --color-tarjeta: #ecdfc0;
+    --color-cabecera: #bc9963;
+    --color-cabecera-texto: #3d2b12;
+    --color-texto: #3d2b12;
+    --color-texto-suave: #6b5b3f;
+    --color-borde: #d8c79f;
+    --color-enlace: #6b4a1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-fondo: #1e1a14;
+      --color-tarjeta: #2a2419;
+      --color-cabecera: #8a6d45;
+      --color-cabecera-texto: #f7f1e1;
+      --color-texto: #f0e9d8;
+      --color-texto-suave: #c9bd9e;
+      --color-borde: #4a3f2c;
+      --color-enlace: #e0c48a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  header {
+    background: var(--color-cabecera);
+    color: var(--color-cabecera-texto);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+  }
+  header p {
+    margin: 0;
+    opacity: 0.85;
+    font-size: 0.9rem;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+  .tarjeta {
+    background: var(--color-tarjeta);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    border: 1px solid var(--color-borde);
+  }
+  h2 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: var(--color-texto);
+  }
+  h3 {
+    font-size: 0.95rem;
+    margin: 16px 0 6px 0;
+    color: var(--color-texto);
+  }
+  p, li {
+    font-size: 0.92rem;
+    color: var(--color-texto);
+  }
+  ul {
+    margin: 6px 0;
+    padding-inline-start: 20px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  a {
+    color: var(--color-enlace);
+  }
+  .indice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .indice li {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  .nota {
+    font-size: 0.82rem;
+    color: var(--color-texto-suave);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--color-borde);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--color-texto-suave);
+  }
+  .idiomas { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 12px; margin-top: 10px; font-size: 0.82rem; }
+  .idiomas a { color: var(--color-cabecera-texto); opacity: 0.85; }
+</style>
+<style>/* barra-capturia */
+.cw-barra{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:8px 16px;background:#0b2f40;color:#f7f1e1;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.cw-barra a{color:#f7f1e1;text-decoration:none}
+.cw-marca{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1.05rem}
+.cw-marca img{width:30px;height:30px;border-radius:8px;background:#f7f1e1}
+.cw-inicio{margin-inline-start:auto;font-size:.9rem;padding:5px 12px;border:1px solid rgba(247,241,225,.35);border-radius:8px}
+.cw-inicio:hover{background:rgba(247,241,225,.12)}
+</style>
+</head>
+<body>
+<!-- barra-capturia -->
+<nav class="cw-barra" aria-label="Capturia"><a class="cw-marca" href="https://capturia.es/en/"><img src="https://capturia.es/assets/logo.png" alt=""><span>Capturia</span></a><a class="cw-inicio" href="https://capturia.es/en/">← Home</a></nav>
+
+<header>
+  <h1>🎣 Delete your Capturia account</h1>
+  <p>Capturia · developed by Capturia Spain</p>
+  <nav class="idiomas"><a href="../" hreflang="es">Español</a> <strong>English</strong> <a href="../fr/" hreflang="fr">Français</a> <a href="../it/" hreflang="it">Italiano</a> <a href="../pt/" hreflang="pt">Português</a> <a href="../de/" hreflang="de">Deutsch</a> <a href="../ar/" hreflang="ar">العربية</a></nav>
+</header>
+
+<main>
+
+  <div class="tarjeta">
+    <h2>From the app (immediate)</h2>
+    <ol>
+      <li>Open Capturia and sign in.</li>
+      <li>Tap your profile photo (top right) and go to <strong>My profile</strong>.</li>
+      <li>Scroll to the bottom and tap <strong>Delete my account</strong>.</li>
+      <li>Confirm by typing the word the app asks for.</li>
+    </ol>
+    <p>Your account and its data are deleted at that moment and you are signed out.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Without the app (by email)</h2>
+    <p>If you no longer have the app installed, write to us at <a href="mailto:capturiaSpain@gmail.com?subject=Delete%20my%20Capturia%20account">capturiaSpain@gmail.com</a> from the email address you registered with, with the subject <em>"Delete my Capturia account"</em>. We will delete it within 30 days at most and confirm by email once it is done.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Delete only some data (without deleting your account)</h2>
+    <p>In the app you can delete any catch, spot, own species, outing, big bite, photo, video, note, meetup, piece of gear, bait or link at any time: open it and tap <strong>Delete</strong>. It is deleted from your phone and from the cloud. You can also change or remove your profile photo from <strong>My profile</strong>.</p>
+    <p>If you prefer us to do it, email <a href="mailto:capturiaSpain@gmail.com?subject=Delete%20data%20from%20Capturia">capturiaSpain@gmail.com</a> from your account email saying which data you want deleted. We will do it within 30 days at most.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>What is deleted</h2>
+    <ul>
+      <li>Your login account (email, Google or Apple sign-in) and your profile (username, photo, settings, links).</li>
+      <li>Your catches, spots, own species, blank days and big bites, with all their photos and videos stored in the cloud.</li>
+      <li>Your notes, meetups, group messages, gear (rods, reels, lines and other), baits and lures, links and your «What fish is it?» queries.</li>
+      <li>Your companions list, pending sends and the groups you have created.</li>
+      <li>Your plan and subscription history within Capturia.</li>
+    </ul>
+    <h3>What is not deleted</h3>
+    <ul>
+      <li>What other users have already accepted from you (catches, spots or species you sent them and they saved): it becomes theirs and stays in their account, without your name.</li>
+      <li>Google Play or App Store purchase receipts: the store keeps them according to its own policy.</li>
+      <li>The anonymous copy Capturia keeps without photos of your catches set to "Public (map)" or "Buddies and public" for the community map (species, weight, location, date and time): it is no longer linked to your account.</li>
+      <li>Technical server backups, if any, may keep your data for up to 30 days until they are renewed. The anonymous copy for the map is kept indefinitely.</li>
+    </ul>
+    <p class="nota">Deleting your account <strong>does not cancel</strong> an active subscription on Google Play or the App Store. Cancel it first in the store (Google Play → Payments &amp; subscriptions → Subscriptions) so it does not renew.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>More information</h2>
+    <p>See our <a href="../../en/">privacy policy</a> or write to us at <a href="mailto:capturiaSpain@gmail.com">capturiaSpain@gmail.com</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  Capturia — Account deletion
+</footer>
+
+</body>
+</html>
