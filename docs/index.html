@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capturia · Tu diario de pesca</title>
+<meta name="description" content="Registra tus capturas con el clima y la mar del momento, guarda tus sitios, identifica peces con IA y comparte con tus compañeros. Para Android e iOS.">
+<link rel="canonical" href="https://capturia.es/">
+<link rel="alternate" hreflang="es" href="https://capturia.es/">
+<link rel="alternate" hreflang="en" href="https://capturia.es/en/">
+<link rel="alternate" hreflang="fr" href="https://capturia.es/fr/">
+<link rel="alternate" hreflang="it" href="https://capturia.es/it/">
+<link rel="alternate" hreflang="pt" href="https://capturia.es/pt/">
+<link rel="alternate" hreflang="de" href="https://capturia.es/de/">
+<link rel="alternate" hreflang="ar" href="https://capturia.es/ar/">
+<link rel="alternate" hreflang="x-default" href="https://capturia.es/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Capturia · Tu diario de pesca">
+<meta property="og:description" content="Registra tus capturas con el clima y la mar del momento, guarda tus sitios, identifica peces con IA y comparte con tus compañeros. Para Android e iOS.">
+<meta property="og:url" content="https://capturia.es/">
+<meta property="og:image" content="https://capturia.es/assets/og.png">
+<meta name="theme-color" content="#3d2b12">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/assets/estilo.css">
+<script>
+(function(){try{
+  if(localStorage.getItem('capturia-idioma'))return;
+  var d=['en','fr','it','pt','de','ar'],n=(navigator.language||'es').slice(0,2).toLowerCase();
+  if(d.indexOf(n)>-1)location.replace('/'+n+'/');
+}catch(e){}})();
+</script>
+</head>
+<body>
+
+<header class="barra">
+  <a class="marca" href="/">
+    <img src="/assets/logo.png" alt="" width="36" height="36" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-emoji',textContent:'🎣'}))">
+    <span>Capturia</span>
+  </a>
+  <nav class="menu">
+    <a href="#funciones">Funciones</a>
+    <a href="#planes">Planes</a>
+    <a href="#preguntas">Preguntas</a>
+  </nav>
+  <label class="idioma"><span class="oculto">Idioma</span>
+    <select id="idioma" aria-label="Idioma"><option value="/" data-l="es" selected>Español</option><option value="/en/" data-l="en">English</option><option value="/fr/" data-l="fr">Français</option><option value="/it/" data-l="it">Italiano</option><option value="/pt/" data-l="pt">Português</option><option value="/de/" data-l="de">Deutsch</option><option value="/ar/" data-l="ar">العربية</option></select>
+  </label>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-txt">
+      <p class="tag">App de pesca para Android e iOS</p>
+      <h1>Tu diario de pesca,<br>siempre contigo</h1>
+      <p class="lead">Apunta cada captura con el clima y la mar del momento, guarda tus sitios, descubre qué pez has sacado y compártelo con tus compañeros.</p>
+      <div class="tiendas"><a class="tienda" href="https://play.google.com/store/apps/details?id=com.capturia.app" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8 1 .6l15.6-9.2c.4-.3.4-.9 0-1.2L5 2.2c-.5-.2-1 .1-1 .6z"/></svg><span><small>Disponible en</small>Google Play</span></a><span class="tienda pronto" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 1h10a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 3v15h10V4H7zm5 16.2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span><small>Próximamente en</small>App Store</span></span></div>
+      <p class="nota-hero">Gratis para empezar · 7 idiomas · Funciona sin cobertura</p>
+    </div>
+    <div class="hero-movil" aria-hidden="true">
+      <div class="movil">
+        <img src="/assets/captura-app.webp" alt="" onerror="this.remove()">
+        <div class="movil-relleno">
+          <div class="mv-cab">🎣 Capturia</div>
+          <div class="mv-card"><b>🐟 Lubina</b><span>2,350 kg · 58 cm</span><em>🌤 18° · 🌊 1,2 m · 9 s</em></div>
+          <div class="mv-card"><b>🦑 Calamar</b><span>0,640 kg</span><em>🌙 · 🌊 0,8 m · 7 s</em></div>
+          <div class="mv-card"><b>🐟 Dorada</b><span>1,120 kg · 41 cm</span><em>⛅ 16° · 🌊 1,5 m · 11 s</em></div>
+          <div class="mv-nav"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="ola" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c120 30 240 45 360 30S600 10 720 20s240 50 360 50 240-30 360-40v60H0z"/></svg>
+</section>
+
+<main>
+  <section id="funciones" class="seccion">
+    <h2>Todo lo que pasa en tu jornada, en un solo sitio</h2>
+    <p class="sub">Pensada por y para pescadores: rápida en el pesquero y completa cuando llegas a casa.</p>
+    <div class="rejilla"><article class="func"><span class="ico" aria-hidden="true">📸</span><h3>Capturas completas</h3><p>Foto, peso, medida, cebo o señuelo… y el clima, el oleaje y el estado de la mar se rellenan solos.</p></article><article class="func"><span class="ico" aria-hidden="true">📍</span><h3>Tus sitios</h3><p>Guarda tus pesqueros en el mapa o tráelos desde Google Maps. Son tuyos: nadie más los ve.</p></article><article class="func"><span class="ico" aria-hidden="true">🐟</span><h3>¿Qué pez es?</h3><p>Haz una foto y la IA te dice la especie, con la talla mínima orientativa de tu zona.</p></article><article class="func"><span class="ico" aria-hidden="true">🌊</span><h3>Previsión de pesca</h3><p>Mejores horas del día, mareas al minuto y el tiempo de la jornada. Te avisa cuando empieza tu mejor hora.</p></article><article class="func"><span class="ico" aria-hidden="true">👥</span><h3>Compañeros y grupos</h3><p>Envía capturas, sitios y especies a tus compañeros, crea grupos y organiza quedadas.</p></article><article class="func"><span class="ico" aria-hidden="true">🗺️</span><h3>Capturas públicas</h3><p>Un mapa anónimo por zonas con lo que se está pescando cerca de ti: especies, número y peso medio.</p></article><article class="func"><span class="ico" aria-hidden="true">📊</span><h3>Estadísticas</h3><p>Descubre qué cebo, qué marea y qué hora te funcionan mejor en cada sitio.</p></article><article class="func"><span class="ico" aria-hidden="true">🎒</span><h3>Mi equipamiento</h3><p>Cañas, carretes, sedales, cebos y señuelos, con sus datos y fotos, siempre a mano.</p></article><article class="func"><span class="ico" aria-hidden="true">📶</span><h3>Sin cobertura</h3><p>En el pesquero no hay red, lo sabemos. Capturia funciona sin conexión y sincroniza al volver.</p></article></div>
+  </section>
+
+  <section class="galeria" aria-label="Así es Capturia">
+    <h2>Así es Capturia</h2>
+    <div class="carrusel"><img src="/assets/galeria/01.webp" alt="Sabe cuándo van a picar: previsión con mareas, luna y las mejores horas de cada día" width="440" height="956" loading="lazy"><img src="/assets/galeria/02.webp" alt="Toda tu pesca en una sola app: capturas, sitios, equipo, compañeros y más" width="440" height="956" loading="lazy"><img src="/assets/galeria/03.webp" alt="Tu diario de pesca: cada captura con su foto, sitio, fecha y peso" width="440" height="956" loading="lazy"><img src="/assets/galeria/04.webp" alt="Descubre qué te funciona: estadísticas de tus capturas" width="440" height="956" loading="lazy"><img src="/assets/galeria/05.webp" alt="El clima y el mar de cada captura: viento, oleaje, marea y agua" width="440" height="956" loading="lazy"><img src="/assets/galeria/06.webp" alt="Dónde se pesca, sin delatar a nadie: mapa anónimo de capturas públicas" width="440" height="956" loading="lazy"><img src="/assets/galeria/07.webp" alt="Tu catálogo de especies con fotos, capturas y talla mínima" width="440" height="956" loading="lazy"><img src="/assets/galeria/08.webp" alt="¿Qué cebo funciona mejor? Cebos y señuelos con sus capturas" width="440" height="956" loading="lazy"></div>
+  </section>
+
+  <section class="privacidad">
+    <div class="priv-in">
+      <span class="ico-grande" aria-hidden="true">🔒</span>
+      <div><h2>Tus sitios son solo tuyos</h2><p>Todo es privado por defecto. Tú decides qué compartes y con quién, borramos la ubicación oculta de tus fotos y puedes eliminar tu cuenta cuando quieras.</p></div>
+    </div>
+  </section>
+
+  <section id="planes" class="seccion">
+    <h2>Elige tu plan</h2>
+    <p class="sub">Empieza gratis y sube de plan cuando lo necesites.</p>
+    <div class="planes"><article class="plan"><h3>Free</h3><p class="precio"><strong>Gratis</strong></p><ul><li>5 sitios y 5 especies</li><li>10 capturas, bolos y grandes picadas</li><li>1 foto por captura</li><li>¿Qué pez es? y previsión de pesca</li></ul></article><article class="plan"><h3>Plus</h3><p class="precio"><strong>1,49 €</strong>/mes<br><span>o 11,99 €/año</span></p><ul><li>250 sitios y 200 especies</li><li>500 capturas, bolos y grandes picadas</li><li>3 fotos por captura</li><li>Copia en la nube de 500 MB</li><li>Grupos y catálogo oficial de especies</li></ul></article><article class="plan destacado"><span class="etiqueta">El más completo</span><h3>Premium</h3><p class="precio"><strong>1,99 €</strong>/mes<br><span>o 15,99 €/año</span></p><ul><li>Sitios, especies y capturas sin límite</li><li>8 fotos y vídeo por captura</li><li>Copia en la nube de 2 GB</li><li>Enviar a compañeros y crear grupos</li><li>Estadísticas avanzadas y mapa de capturas públicas</li></ul></article></div>
+    <p class="nota-planes">1 mes gratis en los planes mensuales para quien se suscribe por primera vez. Precios para España, impuestos incluidos; pueden variar según el país y la tienda.</p>
+  </section>
+
+  <section id="preguntas" class="seccion estrecha">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq"><details><summary>¿Es gratis?</summary><p>Sí. El plan Free no caduca y te deja probar todo lo básico. Si te quedas corto, puedes pasar a Plus o Premium desde la propia app.</p></details><details><summary>¿Funciona sin cobertura?</summary><p>Sí. Puedes registrar capturas y consultar tus datos sin conexión. Cuando vuelves a tener red, se sincroniza solo.</p></details><details><summary>¿Alguien puede ver mis sitios?</summary><p>No. Tus sitios y capturas son privados. Solo los ven los compañeros con los que tú decidas compartirlos.</p></details><details><summary>¿Cómo borro mi cuenta?</summary><p>Desde la app o desde la página de eliminación de cuenta. Se borran tus datos de la nube.</p></details></div>
+  </section>
+
+  <section class="cta">
+    <h2>¿Preparado para la próxima jornada?</h2>
+    <p>Descarga Capturia y empieza tu diario de pesca hoy.</p>
+    <div class="tiendas"><a class="tienda" href="https://play.google.com/store/apps/details?id=com.capturia.app" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8 1 .6l15.6-9.2c.4-.3.4-.9 0-1.2L5 2.2c-.5-.2-1 .1-1 .6z"/></svg><span><small>Disponible en</small>Google Play</span></a><span class="tienda pronto" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 1h10a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 3v15h10V4H7zm5 16.2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span><small>Próximamente en</small>App Store</span></span></div>
+  </section>
+</main>
+
+<footer>
+  <nav class="legal">
+    <a href="https://rubenalvarezfelgueroso-web.github.io/Capturia-Legal/">Privacidad</a>
+    <a href="https://rubenalvarezfelgueroso-web.github.io/Capturia-Legal/terminos/">Términos de uso</a>
+    <a href="https://rubenalvarezfelgueroso-web.github.io/Capturia-Legal/condiciones/">Condiciones de compra</a>
+    <a href="https://rubenalvarezfelgueroso-web.github.io/Capturia-Legal/eliminar-cuenta/">Eliminar cuenta</a>
+    <a href="https://rubenalvarezfelgueroso-web.github.io/Capturia-Legal/manual/es.html">Manual</a>
+    <a href="mailto:capturiaSpain@gmail.com">Contacto</a>
+  </nav>
+  <p>Hecho en Asturias con ❤️ para pescadores.</p>
+  <p class="copy">© 2026 Capturia</p>
+</footer>
+
+<script>
+document.getElementById('idioma').addEventListener('change', function(e){
+  var o=e.target.selectedOptions[0];
+  try{localStorage.setItem('capturia-idioma', o.dataset.l);}catch(err){}
+  location.href=e.target.value;
+});
+</script>
+</body>
+</html>
