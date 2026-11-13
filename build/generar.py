@@ -15,6 +15,9 @@ PLAY_URL = "https://play.google.com/store/apps/details?id=com.capturia.app"
 # (p. ej. "https://apps.apple.com/es/app/capturia/id1234567890").
 # Mientras esté vacío, el botón sale como "Próximamente".
 APPSTORE_URL = ""
+# Cuando la app esté publicada en Google Play, pon esto a True.
+# Mientras sea False, el botón de Google Play sale como "Próximamente".
+PLAY_PUBLICADA = False
 LEGAL = "https://rubenalvarezfelgueroso-web.github.io/Capturia-Legal/"
 EMAIL = "capturiaSpain@gmail.com"
 PRECIOS = {"plus_mes": "1,49 €", "plus_anio": "11,99 €", "premium_mes": "1,99 €", "premium_anio": "15,99 €"}
@@ -49,8 +52,12 @@ ICONO_MOVIL = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentCo
 
 
 def botones(t):
-    play = (f'<a class="tienda" href="{PLAY_URL}" rel="noopener">{ICONO_PLAY}'
-            f'<span><small>{t["btn_play_small"]}</small>Google Play</span></a>')
+    if PLAY_PUBLICADA:
+        play = (f'<a class="tienda" href="{PLAY_URL}" rel="noopener">{ICONO_PLAY}'
+                f'<span><small>{t["btn_play_small"]}</small>Google Play</span></a>')
+    else:
+        play = (f'<span class="tienda pronto" aria-disabled="true">{ICONO_PLAY}'
+                f'<span><small>{t["btn_play_soon"]}</small>Google Play</span></span>')
     if APPSTORE_URL:
         ios = (f'<a class="tienda" href="{APPSTORE_URL}" rel="noopener">{ICONO_MOVIL}'
                f'<span><small>{t["btn_ios_small"]}</small>App Store</span></a>')
