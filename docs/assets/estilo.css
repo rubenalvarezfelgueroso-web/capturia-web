@@ -251,3 +251,13 @@ footer p { margin: 4px 0; }
 }
 .puntos button.activo { width: 24px; background: var(--acento); }
 @media (max-width: 600px) { .flecha { display: none; } }
+
+/* ---------- Plus y Premium (20/11/2026) ---------- */
+.plus-premium { padding-top: 8px; }
+.plus-premium .func { position: relative; }
+.plan-eti {
+  position: absolute; top: 18px; inset-inline-end: 18px;
+  font-size: .75rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; color: #fff;
+}
+.plan-eti.plus { background: var(--mar); }
+.plan-eti.premium { background: var(--acento); }

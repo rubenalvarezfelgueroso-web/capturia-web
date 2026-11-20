@@ -14,10 +14,10 @@ PLAY_URL = "https://play.google.com/store/apps/details?id=com.capturia.app"
 # Cuando la app esté publicada en App Store, pega aquí su enlace
 # (p. ej. "https://apps.apple.com/es/app/capturia/id1234567890").
 # Mientras esté vacío, el botón sale como "Próximamente".
-APPSTORE_URL = "https://apps.apple.com/app/id6823500695"
+APPSTORE_URL = ""  # App Store: https://apps.apple.com/app/id6823500695 (pegar aquí para activar el botón)
 # Cuando la app esté publicada en Google Play, pon esto a True.
 # Mientras sea False, el botón de Google Play sale como "Próximamente".
-PLAY_PUBLICADA = True
+PLAY_PUBLICADA = False
 # Textos legales y manual (repo Capturia-Legal) con dominio propio desde el 20/11/2026.
 LEGAL = "https://legal.capturia.es/"
 EMAIL = "soporte@capturia.es"
@@ -127,6 +127,21 @@ def pagina(l):
         f'<article class="func"><span class="ico" aria-hidden="true">{e}</span><h3>{h}</h3><p>{p}</p></article>'
         for e, h, p in t["features"]
     )
+    # Sección "Plus y Premium" (20/11/2026): solo se pinta en los idiomas que ya tienen sus textos
+    # (extra_features); el resto la mostrará cuando se traduzca.
+    extra = ""
+    if t.get("extra_features"):
+        tarjetas = "".join(
+            f'<article class="func"><span class="ico" aria-hidden="true">{e}</span>'
+            f'<span class="plan-eti {pl.lower()}">{pl}</span><h3>{h}</h3><p>{p}</p></article>'
+            for e, h, p, pl in t["extra_features"]
+        )
+        extra = f'''  <section id="plus-premium" class="seccion plus-premium">
+    <h2>{t["extra_h2"]}</h2>
+    <p class="sub">{t["extra_p"]}</p>
+    <div class="rejilla">{tarjetas}</div>
+  </section>
+'''
     faqs = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in t["faq"])
     mes, anio, o = t["mes"], t["anio"], t["o"]
     planes = (
@@ -218,7 +233,7 @@ def pagina(l):
     <div class="rejilla">{feats}</div>
   </section>
 
-{galeria}
+{extra}{galeria}
   <section class="privacidad">
     <div class="priv-in">
       <span class="ico-grande" aria-hidden="true">🔒</span>
