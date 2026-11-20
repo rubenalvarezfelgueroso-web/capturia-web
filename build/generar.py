@@ -14,12 +14,13 @@ PLAY_URL = "https://play.google.com/store/apps/details?id=com.capturia.app"
 # Cuando la app esté publicada en App Store, pega aquí su enlace
 # (p. ej. "https://apps.apple.com/es/app/capturia/id1234567890").
 # Mientras esté vacío, el botón sale como "Próximamente".
-APPSTORE_URL = ""
+APPSTORE_URL = "https://apps.apple.com/app/id6823500695"
 # Cuando la app esté publicada en Google Play, pon esto a True.
 # Mientras sea False, el botón de Google Play sale como "Próximamente".
-PLAY_PUBLICADA = False
-LEGAL = "https://rubenalvarezfelgueroso-web.github.io/Capturia-Legal/"
-EMAIL = "capturiaSpain@gmail.com"
+PLAY_PUBLICADA = True
+# Textos legales y manual (repo Capturia-Legal) con dominio propio desde el 20/11/2026.
+LEGAL = "https://legal.capturia.es/"
+EMAIL = "soporte@capturia.es"
 PRECIOS = {"plus_mes": "1,49 €", "plus_anio": "11,99 €", "premium_mes": "1,99 €", "premium_anio": "15,99 €"}
 IDIOMAS = ["es", "en", "fr", "it", "pt", "de", "ar"]
 # ------------------------------------------------
