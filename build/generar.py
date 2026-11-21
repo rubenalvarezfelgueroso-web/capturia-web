@@ -75,19 +75,19 @@ def plan(nombre, precio_html, items, destacado=False, etiqueta=""):
     return f'<article class="{cls}">{eti}<h3>{nombre}</h3><p class="precio">{precio_html}</p><ul>{lis}</ul></article>'
 
 
-# 21/11/2026: galería rehecha con las capturas nuevas (Android) y 2 nuevas: ¿Qué pez es? y Tipo de pescador.
-GALERIA_ES = [
-    "Sabe cuándo van a picar: previsión con mareas, luna y las mejores horas de cada día",
-    "¿Qué pez es? Haz una foto y una IA especializada te dice la especie y la talla mínima",
-    "Toda tu pesca en una sola app: capturas, spots, equipo, compañeros y más",
-    "Tu diario de pesca: cada captura con su foto, spot, fecha y peso",
-    "Cada captura con todo detalle: fotos, especie, spot, peso, talla mínima, clima y mar",
-    "Descubre qué te funciona: estadísticas de tus capturas",
-    "Dónde se pesca, sin delatar a nadie: mapa anónimo de capturas públicas",
-    "A tu manera de pescar: costa, río, embarcación o submarina",
-    "Tu catálogo de especies con fotos, capturas y talla mínima",
-    "¿Qué cebo funciona mejor? Cebos y señuelos con sus capturas",
-]
+# 21/11/2026: galería por idioma. Los textos de cada imagen están en textos.py ("galeria").
+# Imágenes: español en docs/assets/galeria/01.webp, 02.webp…; resto de idiomas en
+# docs/assets/galeria/<idioma>/01.webp, 02.webp… Si un idioma no tiene imágenes, no sale la galería.
+def galeria_rutas(l, n):
+    """Rutas de las imágenes que existen de verdad (seguidas desde 01) para ese idioma."""
+    sub = "" if l == "es" else f"{l}/"
+    rutas = []
+    for i in range(1, n + 1):
+        if not (RAIZ / "assets" / "galeria" / sub / f"{i:02d}.webp").exists():
+            break
+        rutas.append(f"/assets/galeria/{sub}{i:02d}.webp")
+    return rutas
+
 
 PECES = {
     "es": ("Lubina", "Calamar", "Dorada"), "en": ("Sea bass", "Squid", "Gilthead bream"),
@@ -101,19 +101,20 @@ def pagina(l):
     t = TEXTOS[l]
     p1, p2, p3 = PECES[l]
     galeria = ""
-    if l == "es":  # Las imágenes de la tienda están en español
+    rutas = galeria_rutas(l, len(t["galeria"]))
+    if rutas:
         figs = "".join(
-            f'<img src="/assets/galeria/{i:02d}.webp" alt="{a}" width="440" height="956" loading="lazy">'
-            for i, a in enumerate(GALERIA_ES, 1))
+            f'<img src="{r}" alt="{a}" width="440" height="956" loading="lazy">'
+            for r, a in zip(rutas, t["galeria"]))
         puntos = "".join(
-            f'<button type="button" aria-label="Imagen {i} de {len(GALERIA_ES)}"></button>'
-            for i in range(1, len(GALERIA_ES) + 1))
-        galeria = f'''  <section class="galeria" aria-label="Así es Capturia">
-    <h2>Así es Capturia</h2>
+            f'<button type="button" aria-label="{t["galeria_img"].format(i=i, n=len(rutas))}"></button>'
+            for i in range(1, len(rutas) + 1))
+        galeria = f'''  <section class="galeria" aria-label="{t["galeria_h2"]}">
+    <h2>{t["galeria_h2"]}</h2>
     <div class="carrusel-marco">
-      <button class="flecha anterior" type="button" aria-label="Anterior">‹</button>
+      <button class="flecha anterior" type="button" aria-label="{t["galeria_ant"]}">‹</button>
       <div class="carrusel" id="carrusel">{figs}</div>
-      <button class="flecha siguiente" type="button" aria-label="Siguiente">›</button>
+      <button class="flecha siguiente" type="button" aria-label="{t["galeria_sig"]}">›</button>
     </div>
     <div class="puntos" id="puntos">{puntos}</div>
   </section>
@@ -130,8 +131,7 @@ def pagina(l):
         f'<article class="func"><span class="ico" aria-hidden="true">{e}</span><h3>{h}</h3><p>{p}</p></article>'
         for e, h, p in t["features"]
     )
-    # Sección "Plus y Premium" (20/11/2026): solo se pinta en los idiomas que ya tienen sus textos
-    # (extra_features); el resto la mostrará cuando se traduzca.
+    # Sección "Plus y Premium" (20/11/2026), traducida a los 7 idiomas el 21/11/2026.
     extra = ""
     if t.get("extra_features"):
         tarjetas = "".join(
@@ -282,7 +282,7 @@ document.getElementById('idioma').addEventListener('change', function(e){{
   try{{localStorage.setItem('capturia-idioma', o.dataset.l);}}catch(err){{}}
   location.href=e.target.value;
 }});
-// Galería: puntos y flechas (solo existe en la página en español)
+// Galería: puntos y flechas (solo si ese idioma tiene imágenes)
 (function(){{
   var c=document.getElementById('carrusel'), p=document.getElementById('puntos');
   if(!c||!p)return;

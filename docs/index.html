@@ -142,7 +142,7 @@ document.getElementById('idioma').addEventListener('change', function(e){
   try{localStorage.setItem('capturia-idioma', o.dataset.l);}catch(err){}
   location.href=e.target.value;
 });
-// Galería: puntos y flechas (solo existe en la página en español)
+// Galería: puntos y flechas (solo si ese idioma tiene imágenes)
 (function(){
   var c=document.getElementById('carrusel'), p=document.getElementById('puntos');
   if(!c||!p)return;
