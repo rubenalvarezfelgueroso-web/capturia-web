@@ -75,13 +75,16 @@ def plan(nombre, precio_html, items, destacado=False, etiqueta=""):
     return f'<article class="{cls}">{eti}<h3>{nombre}</h3><p class="precio">{precio_html}</p><ul>{lis}</ul></article>'
 
 
+# 21/11/2026: galería rehecha con las capturas nuevas (Android) y 2 nuevas: ¿Qué pez es? y Tipo de pescador.
 GALERIA_ES = [
     "Sabe cuándo van a picar: previsión con mareas, luna y las mejores horas de cada día",
-    "Toda tu pesca en una sola app: capturas, sitios, equipo, compañeros y más",
-    "Tu diario de pesca: cada captura con su foto, sitio, fecha y peso",
+    "¿Qué pez es? Haz una foto y una IA especializada te dice la especie y la talla mínima",
+    "Toda tu pesca en una sola app: capturas, spots, equipo, compañeros y más",
+    "Tu diario de pesca: cada captura con su foto, spot, fecha y peso",
+    "Cada captura con todo detalle: fotos, especie, spot, peso, talla mínima, clima y mar",
     "Descubre qué te funciona: estadísticas de tus capturas",
-    "El clima y el mar de cada captura: viento, oleaje, marea y agua",
     "Dónde se pesca, sin delatar a nadie: mapa anónimo de capturas públicas",
+    "A tu manera de pescar: costa, río, embarcación o submarina",
     "Tu catálogo de especies con fotos, capturas y talla mínima",
     "¿Qué cebo funciona mejor? Cebos y señuelos con sus capturas",
 ]
