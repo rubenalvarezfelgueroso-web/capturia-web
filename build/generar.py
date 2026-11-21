@@ -78,6 +78,13 @@ def plan(nombre, precio_html, items, destacado=False, etiqueta=""):
 # 21/11/2026: galería por idioma. Los textos de cada imagen están en textos.py ("galeria").
 # Imágenes: español en docs/assets/galeria/01.webp, 02.webp…; resto de idiomas en
 # docs/assets/galeria/<idioma>/01.webp, 02.webp… Si un idioma no tiene imágenes, no sale la galería.
+def hero_img(l):
+    """Captura del móvil de la portada: la del idioma si existe (assets/captura-app-<idioma>.webp)."""
+    if l != "es" and (RAIZ / "assets" / f"captura-app-{l}.webp").exists():
+        return f"/assets/captura-app-{l}.webp"
+    return "/assets/captura-app.webp"
+
+
 def galeria_rutas(l, n):
     """Rutas de las imágenes que existen de verdad (seguidas desde 01) para ese idioma."""
     sub = "" if l == "es" else f"{l}/"
@@ -215,7 +222,7 @@ def pagina(l):
     </div>
     <div class="hero-movil" aria-hidden="true">
       <div class="movil">
-        <img src="/assets/captura-app.webp" alt="" onerror="this.remove()">
+        <img src="{hero_img(l)}" alt="" onerror="this.remove()">
         <div class="movil-relleno">
           <div class="mv-cab">🎣 Capturia</div>
           <div class="mv-card"><b>🐟 {p1}</b><span>2,350 kg · 58 cm</span><em>🌤 18° · 🌊 1,2 m · 9 s</em></div>
