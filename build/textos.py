@@ -22,6 +22,7 @@ TEXTOS = {
   "func_p": "Pensada por y para pescadores: rápida en el spot y completa cuando llegas a casa.",
   "features": [
     ["📸", "Capturas completas", "Foto, peso, medida, cebo o señuelo… y el clima, el oleaje y el estado de la mar se rellenan solos."],
+    ["👎", "Bolos y grandes picadas", "Apunta también los días sin capturas y las picadas que se escaparon, con la especie, el sitio y las condiciones. Fíltralos por sitio y por especie para saber cuándo no merece la pena salir."],
     ["📍", "Tus sitios", "Guarda tus spots en el mapa o tráelos desde Google Maps. Son tuyos: nadie más los ve."],
     ["🐟", "¿Qué pez es?", "Haz una foto y una IA especializada te dice la especie, con la talla mínima orientativa de tu zona."],
     ["🖼️", "Importa tus capturas", "¿Tienes el móvil lleno de fotos de peces? Capturia las reconoce, las agrupa por jornada y las convierte en capturas en un momento."],
@@ -143,6 +144,7 @@ TEXTOS = {
   "func_p": "Made by anglers, for anglers: quick at the spot and complete when you get home.",
   "features": [
     ["📸", "Complete catch records", "Photo, weight, length, bait or lure… and the weather, swell and sea state fill themselves in."],
+    ["👎", "Blanks and big bites", "Log the days with no catches and the bites that got away too, with the species, the spot and the conditions. Filter them by spot and species to know when it is not worth going out."],
     ["📍", "Your spots", "Save your spots on the map or bring them in from Google Maps. They're yours: nobody else sees them."],
     ["🐟", "What fish is it?", "Take a photo and a specialised AI tells you the species, with the approximate minimum size in your area."],
     ["🖼️", "Import your catches", "Phone full of fish photos? Capturia recognises them, groups them by fishing day and turns them into catches in no time."],
@@ -264,6 +266,7 @@ TEXTOS = {
   "func_p": "Pensée par et pour les pêcheurs : rapide au bord de l'eau, complète une fois rentré.",
   "features": [
     ["📸", "Des prises complètes", "Photo, poids, taille, appât ou leurre… et la météo, la houle et l'état de la mer se remplissent tout seuls."],
+    ["👎", "Bredouilles et grosses touches", "Notez aussi les jours sans prise et les touches qui vous ont échappé, avec l'espèce, le spot et les conditions. Filtrez-les par spot et par espèce pour savoir quand il ne vaut pas la peine de sortir."],
     ["📍", "Vos spots", "Enregistrez vos spots sur la carte ou importez-les depuis Google Maps. Ils sont à vous : personne d'autre ne les voit."],
     ["🐟", "Quel poisson est-ce ?", "Prenez une photo et une IA spécialisée vous indique l'espèce, avec la taille minimale indicative de votre zone."],
     ["🖼️", "Importez vos prises", "Votre téléphone est plein de photos de poissons ? Capturia les reconnaît, les regroupe par sortie et les transforme en prises en un instant."],
@@ -385,6 +388,7 @@ TEXTOS = {
   "func_p": "Pensata da pescatori per pescatori: veloce sullo spot e completa quando torni a casa.",
   "features": [
     ["📸", "Catture complete", "Foto, peso, misura, esca o artificiale… e il meteo, l'onda e lo stato del mare si compilano da soli."],
+    ["👎", "Cannate e grandi abboccate", "Annota anche i giorni senza catture e le abboccate sfuggite, con la specie, lo spot e le condizioni. Filtrali per spot e per specie per sapere quando non vale la pena uscire."],
     ["📍", "I tuoi spot", "Salva i tuoi spot sulla mappa o importali da Google Maps. Sono tuoi: nessun altro li vede."],
     ["🐟", "Che pesce è?", "Scatta una foto e un'IA specializzata ti dice la specie, con la misura minima indicativa della tua zona."],
     ["🖼️", "Importa le tue catture", "Hai il telefono pieno di foto di pesci? Capturia le riconosce, le raggruppa per uscita e le trasforma in catture in un attimo."],
@@ -506,6 +510,7 @@ TEXTOS = {
   "func_p": "Pensada por e para pescadores: rápida no pesqueiro e completa quando chegas a casa.",
   "features": [
     ["📸", "Capturas completas", "Foto, peso, medida, isco ou amostra… e o tempo, a ondulação e o estado do mar preenchem-se sozinhos."],
+    ["👎", "Zeros e grandes fisgadas", "Regista também os dias sem capturas e as fisgadas que escaparam, com a espécie, o pesqueiro e as condições. Filtra-os por pesqueiro e por espécie para saberes quando não compensa sair."],
     ["📍", "Os teus pesqueiros", "Guarda os teus pesqueiros no mapa ou importa-os do Google Maps. São teus: mais ninguém os vê."],
     ["🐟", "Que peixe é?", "Tira uma foto e uma IA especializada diz-te a espécie, com o tamanho mínimo orientativo da tua zona."],
     ["🖼️", "Importa as tuas capturas", "Tens o telemóvel cheio de fotos de peixes? O Capturia reconhece-as, agrupa-as por pescaria e transforma-as em capturas num instante."],
@@ -627,6 +632,7 @@ TEXTOS = {
   "func_p": "Von Anglern für Angler gemacht: schnell am Wasser und vollständig, wenn du wieder zu Hause bist.",
   "features": [
     ["📸", "Vollständige Fänge", "Foto, Gewicht, Länge, Köder oder Kunstköder … und Wetter, Wellengang und Seezustand werden automatisch ausgefüllt."],
+    ["👎", "Schneidertage und große Bisse", "Halte auch die Tage ohne Fang und die Bisse fest, die dir entwischt sind, mit Art, Angelplatz und Bedingungen. Filtere sie nach Platz und Art, um zu wissen, wann es sich nicht lohnt rauszufahren."],
     ["📍", "Deine Angelplätze", "Speichere deine Plätze auf der Karte oder übernimm sie aus Google Maps. Sie gehören dir: Niemand sonst sieht sie."],
     ["🐟", "Welcher Fisch ist das?", "Mach ein Foto und eine spezialisierte KI nennt dir die Art, mit dem ungefähren Mindestmaß in deinem Gebiet."],
     ["🖼️", "Fänge importieren", "Dein Handy ist voller Fischfotos? Capturia erkennt sie, gruppiert sie nach Angeltag und macht im Handumdrehen Fänge daraus."],
@@ -748,6 +754,7 @@ TEXTOS = {
   "func_p": "صُمّم من صيادين وللصيادين: سريع في مكان الصيد، ومتكامل حين تعود إلى البيت.",
   "features": [
     ["📸", "صيد موثّق بالكامل", "الصورة والوزن والطول والطُعم الطبيعي أو الاصطناعي… أما الطقس والموج وحالة البحر فتُملأ تلقائيًا."],
+    ["👎", "الأيام الفارغة والعضّات الكبيرة", "سجّل أيضاً الأيام التي لم تصطد فيها شيئاً والعضّات التي أفلتت منك، مع النوع والموقع والظروف. صفّها حسب الموقع والنوع لتعرف متى لا يستحق الخروج."],
     ["📍", "أماكن صيدك", "احفظ أماكنك على الخريطة أو استوردها من خرائط Google. إنها لك وحدك: لا يراها أحد غيرك."],
     ["🐟", "ما هذه السمكة؟", "التقط صورة وسيخبرك ذكاء اصطناعي متخصص بالنوع، مع الحجم الأدنى التقريبي في منطقتك."],
     ["🖼️", "استورد صيدك", "هاتفك مليء بصور الأسماك؟ يتعرّف Capturia عليها ويجمعها حسب يوم الصيد ويحوّلها إلى صيدات في لحظات."],
